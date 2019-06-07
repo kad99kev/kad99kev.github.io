@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Neuro</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.1.2/dist/tf.min.js"></script>
+
+    <script src="libraries/p5.js"></script>
+    <script src="libraries/p5.dom.js"></script>
+    <script src="libraries/tfNN.js"></script>
+    <script src="libraries/GA.js"></script>
+
+
+    <script src="public/sketch.js"></script>
+    <script src="public/boundary.js"></script>
+    <script src="public/ray.js"></script>
+    <script src="public/particle.js"></script>
+  </head>
+  <body>
+    <h1>Neuro-Evolution Steering of Autonomous Agents</h1>
+    <div id="sketch-holder">
+
+    </div>
+    <div id='button'>
+
+    </div>
+    <br>
+    Laps: <span id="laps">0</span>
+    <br>
+    Speed: <span id="speed">1</span>
+    <br>
+    <input id="speedSlider" type="range" min="1" max="5" value="1">
+  </body>
+</html>
