@@ -65,7 +65,7 @@ function setup(){
 
   load = createButton("Load");
   load.mousePressed(function(){
-    imgClf.load('libraries/model.json', customModelReady);
+    imgClf.load('../assets/model.json', customModelReady);
   });
 
   trainButton = createButton("Train");
