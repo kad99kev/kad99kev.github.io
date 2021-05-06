@@ -61,7 +61,6 @@ export const Text = styled.p`
   margin-bottom: 1rem;
   margin-top: .25rem;
   font-size: 1rem;
-  text-transform: capitalize;
   @media(max-width: ${variables.breakpointPhone}) {
     font-size: .9rem;
   }

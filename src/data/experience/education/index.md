@@ -1,5 +1,5 @@
 ---
-title: Education
+title: Education 👨‍🎓
 date: "2021-05-02"
 category: Studies
 tags: ['Computer Engineering', 'HSC', 'SSC']

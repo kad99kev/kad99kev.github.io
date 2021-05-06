@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby"
 import Layout from "../../components/layout"
 import Seo from "../../components/seo"
 import { Calendar, Clock } from 'react-feather'
-
+import Img from "gatsby-image"
 import {Intro, Title, ArticlePost, SmallText, ArticleBody, NaviagtionList, NaviagtionLi } from '../../components/styled/posts'
 import {ContainerLayout} from '../../components/common'
 
@@ -36,7 +36,9 @@ const BlogPost = ({data, pageContext, location}) => {
                     <span className="align-middle"> read time : {post.frontmatter.time} mins </span>
                   </SmallText>
                 </header>
-                
+                <div style={{ marginTop: 1 + `rem` }}>
+                  <Img fluid={post.frontmatter.image.childImageSharp.fluid} title={post.frontmatter.title} />
+                </div>
                 <ArticleBody dangerouslySetInnerHTML={{ __html: post.html }} />
               </ArticlePost>
 
@@ -85,6 +87,13 @@ export const data = graphql`
         date(formatString: "MMMM DD, YYYY")
         description,
         time
+        image {
+          childImageSharp {
+            fluid(maxWidth: 600, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }

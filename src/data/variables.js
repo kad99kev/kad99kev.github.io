@@ -4,7 +4,7 @@ const varibles = {
   primaryColour: "#E94560",
   backgroundColour: "#1A1A2E",
   fontColour: "#C0FAFF",
-  linkColour: "#CA0808",
+  linkColour: "orange",
   titleColour: "#56B8CF",
   subTitleColour: "white",
 

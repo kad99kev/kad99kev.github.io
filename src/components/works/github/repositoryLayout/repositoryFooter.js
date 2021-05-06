@@ -1,6 +1,7 @@
 import React from 'react'
 import { Star, Key } from "react-feather"
 import {FooterItem, Circle} from "../../../styled/repository"
+import variables from "../../../../data/variables";
 
 export const RepositoryFooter = ({ repo }) => {
 
@@ -16,14 +17,14 @@ export const RepositoryFooter = ({ repo }) => {
     )
   }
   return (
-    <div style={{ color: `#586069`, fontSize: 12 }}>
+    <div style={{ color: variables.titleColour, fontSize: 12 }}>
       <FooterItem>
         <Circle
           style={{
             backgroundColor: language ? language.node.color : '#000'
           }}
         />{" "}
-        {language ? language.node.name : 'undifined'}
+        {language ? language.node.name : 'undefined'}
       </FooterItem>
       <FooterItem>
         <Star className="star" />

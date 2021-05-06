@@ -37,12 +37,12 @@ const BlogIndex = ({ data }) => {
                     <div className="media">
                       <div className="image-wrapper">
                         <Link to={node.fields.slug}>
-                          <Img fluid={node.frontmatter.image.childImageSharp.fluid} title="work title" />
+                          <Img fluid={node.frontmatter.image.childImageSharp.fluid} title={ node.frontmatter.title || node.fields.slug } />
                         </Link> 
                       </div>
                       <SmallText>
                         Image Credits : 
-                        <UnderLink href={node.frontmatter.imageCredit} target="_blank" title="image credit">
+                        <UnderLink href={node.frontmatter.imageCredit} target="_blank" title={node.frontmatter.imageCredit}>
                           {node.frontmatter.imageCredit}
                         </UnderLink>
                       </SmallText>

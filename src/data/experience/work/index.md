@@ -1,5 +1,5 @@
 ---
-title: Work Experience
+title: Work Experience 👨‍💻 
 date: "2021-05-02T23"
 category: Work
 tags: ['AI Engineer', 'Computer Vision Researcher', 'Chatbot Developer', 'Web Developer']

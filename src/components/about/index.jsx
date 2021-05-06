@@ -27,8 +27,10 @@ const About = () => {
             </div> 
             <div>
               <Title> Hello, I’m Kevlyn Kadamala </Title>
-              <Text> I'm an aspiring <b style={{color: variables.primaryColour }}>AI Engineer</b> and <b style={{color: variables.primaryColour }}>Researcher</b> from India living in Mumbai. </Text>
-              <Text> I love working with modern technologies, building and designing awesome projects. I prefer minimalistic & clean designs with strong user experience.</Text>
+              <Text> I'm an <b style={{color: variables.primaryColour }}>Undergraduate Student</b>  from India living in Mumbai. </Text>
+              <Text> My interest majorly lies in <b style={{color: variables.primaryColour }}>Artificial Intelligence</b>, <b style={{color: variables.primaryColour }}>Deep Learning</b> and <b style={{color: variables.primaryColour }}>Reinforcement Learning</b>.</Text>
+              <Text>I am aspiring to become an <b style={{color: variables.primaryColour }}>AI Engineer</b> and a <b style={{color: variables.primaryColour }}>Researcher</b>.</Text>
+              <Text>I also enjoy video games, football and music! :D</Text>
               <ResumeButton href="resume.pdf" target="_blank"> Download resume </ResumeButton>
             </div>
           </AboutSection>

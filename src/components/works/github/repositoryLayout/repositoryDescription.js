@@ -4,7 +4,7 @@ import {Text} from "../../../styled/repository"
 export const RepositoryDescription = ({ repo }) => (
   <div>
     <Text>
-      {repo.description || "this repo didn't have any description"}
+      {repo.description || "This repository doesn't have any description!"}
 
       {repo.homepageUrl && (
         <>

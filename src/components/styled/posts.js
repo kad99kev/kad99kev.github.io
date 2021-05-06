@@ -67,6 +67,10 @@ export const ArticleBody = styled.div `
     color: ${variables.fontColour};
     margin-bottom: 0.5rem;
   }
+  a{
+    color: ${variables.linkColour};
+    text-decoration: underline;
+  }
 `
 
 export const NaviagtionList = styled.ul`
