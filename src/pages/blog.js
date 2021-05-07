@@ -69,7 +69,7 @@ const BlogIndex = ({ data }) => {
                         </SmallText>
                         <SmallText> 
                           <Clock className="align-middle text-primary" width="18" height="18" /> 
-                          <span className="align-middle"> read time : {node.frontmatter.time} </span>
+                          <span className="align-middle"> estimated read time : {node.frontmatter.time} </span>
                         </SmallText>
                       </header>
                       <Text

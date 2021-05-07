@@ -24,33 +24,35 @@ const WorkIndex = ({ data }) => {
               {works.map(({ node }) => {
               const title = node.frontmatter.title || node.fields.slug
                 return (
-                  <WorkPost key={node.fields.slug}>
-                    <div className="media">
-                      <div className="image-wrapper">
-                        <Link to={node.fields.slug}>
-                          <Img fluid={node.frontmatter.image.childImageSharp.fluid} title="work title" />
-                        </Link>
-                      </div>
-                    </div>
-                    <div className="content">
-                      <header>
-                        <Category>{node.frontmatter.category}</Category>
-                        <Title>
-                          <Link className="text-primary lined-link" style={{ boxShadow: `none` }} to={node.fields.slug}>
-                            {title}
+                  <Link to={node.fields.slug}>
+                    <WorkPost key={node.fields.slug}>
+                      <div className="media">
+                        <div className="image-wrapper">
+                          <Link to={node.fields.slug}>
+                            <Img fluid={node.frontmatter.image.childImageSharp.fluid} title="work title" />
                           </Link>
-                        </Title>
-                      </header>
-                        <Text
-                          dangerouslySetInnerHTML={{
-                            __html: node.frontmatter.description || node.excerpt,
-                          }}
-                        />
-                        <div>
-                          {node.frontmatter.tags.map((tag, index) => (<Tag key={index}>{tag}</Tag>))}
                         </div>
-                    </div>
-                  </WorkPost>
+                      </div>
+                      <div className="content">
+                        <header>
+                          <Category>{node.frontmatter.category}</Category>
+                          <Title>
+                            <Link className="text-primary lined-link" style={{ boxShadow: `none` }} to={node.fields.slug}>
+                              {title}
+                            </Link>
+                          </Title>
+                        </header>
+                          <Text
+                            dangerouslySetInnerHTML={{
+                              __html: node.frontmatter.description || node.excerpt,
+                            }}
+                          />
+                          <div>
+                            {node.frontmatter.tags.map((tag, index) => (<Tag key={index}>{tag}</Tag>))}
+                          </div>
+                      </div>
+                    </WorkPost>
+                  </Link>
                 )
               })}
             </ContainerLayout>

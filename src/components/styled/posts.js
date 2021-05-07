@@ -35,7 +35,6 @@ export const SmallText = styled.small`
 `
 export const ArticleBody = styled.div `
   margin-top: 5rem;
-  margin-right: 10rem;
   h1 {
     color: ${variables.titleColour };
     margin-top: 2rem;
@@ -58,12 +57,14 @@ export const ArticleBody = styled.div `
   }
   p {
     font-size: 1rem;
-    font-family: "GT-Walsheim-Pro-Medium";
+    font-family: "GT-Walsheim-Pro-Regular";
+    font-weight: 100;
     color: ${variables.fontColour};
+    text-align: justify
   }
   li {
     font-size: 1rem;
-    font-family: "GT-Walsheim-Pro-Medium";
+    font-family: "GT-Walsheim-Pro-Regular";
     color: ${variables.fontColour};
     margin-bottom: 0.5rem;
   }

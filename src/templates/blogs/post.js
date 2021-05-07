@@ -33,7 +33,7 @@ const BlogPost = ({data, pageContext, location}) => {
                   </SmallText>
                   <SmallText> 
                     <Clock className="align-middle text-primary" width="18" height="18" /> 
-                    <span className="align-middle"> read time : {post.frontmatter.time} mins </span>
+                    <span className="align-middle"> estimated read time : {post.frontmatter.time} </span>
                   </SmallText>
                 </header>
                 <div style={{ marginTop: 1 + `rem` }}>
