@@ -34,7 +34,7 @@ const BlogIndex = ({ data }) => {
                 const title = node.frontmatter.title || node.fields.slug
                 return (
                   <WorkPost key={node.fields.slug}>
-                    <div className="media">
+                    <div className="media" style={{ paddingBottom: "0.5rem" }}>
                       <div className="image-wrapper">
                         <Link to={node.fields.slug}>
                           <Img fluid={node.frontmatter.image.childImageSharp.fluid} title={ node.frontmatter.title || node.fields.slug } />

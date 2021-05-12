@@ -61,11 +61,12 @@ export const WorkPost = styled.article`
   grid-template-columns: 1fr 1fr;
   align-items: center;
   margin-bottom: 5rem;
+  box-shadow: 0px 0px 5px 2px ${variables.primaryColour};
+  border-radius: .9rem;
   @media(max-width: ${variables.breakpointPhone}) {
     grid-template-columns: 1fr;
     border: 10px solid #fff;
     border-radius: .9rem;
-    box-shadow: 0 17px 56px rgba(125,127,129,.17);
 	}
   > div.content {
     padding: 2rem 3rem;
@@ -82,7 +83,6 @@ export const WorkPost = styled.article`
       @media(min-width: ${variables.breakpointPhone}) {
         border: 10px solid #fff;
         border-radius: .9rem;
-        box-shadow: 0 17px 56px rgba(125,127,129,.17);
       }
       > a > div {
         transition: all 800ms ease-in-out;

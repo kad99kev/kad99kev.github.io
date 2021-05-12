@@ -5,6 +5,7 @@ import Repository from "../components/works/github"
 import { graphql } from "gatsby"
 import {RepoGrid, RepoInfo, Avatar} from "../components/styled/repository"
 import {SectionIntro, ContainerLayout} from "../components/common";
+import variables from "../data/variables";
 
 const RepositoryPage = ({data}) => { 
   const {
@@ -20,7 +21,7 @@ const RepositoryPage = ({data}) => {
         <SectionIntro>
           <RepoInfo>
             <Avatar style={{ backgroundImage: `url(${avatarUrl})` }} />
-            <h2 style={{ color: "#CA0808" }}>{name}</h2>
+            <h2 style={{ color: variables.titleColour }}>{name}</h2>
           </RepoInfo>
           <RepoGrid>
             {repositories.nodes.map((repo, index) => <Repository key={index} repo={repo} />).reverse()}

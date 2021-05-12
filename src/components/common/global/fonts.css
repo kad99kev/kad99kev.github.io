@@ -10,3 +10,16 @@
   font-family: 'GT-Walsheim-Pro-Bold';
   src: url('../../../assets/fonts/GT-Walsheim-Pro-Bold.woff2') format('woff2'); /* Super Modern Browsers */
 }
+
+@font-face {
+  font-family: 'Merriweather-Bold';
+  src: url('../../../assets/fonts/Merriweather-Bold.ttf') format('truetype'); /* Super Modern Browsers */
+}
+@font-face {
+  font-family: 'Merriweather-Light';
+  src: url('../../../assets/fonts/Merriweather-Light.ttf') format('truetype'); /* Super Modern Browsers */
+}
+@font-face {
+  font-family: 'Merriweather-Regular';
+  src: url('../../../assets/fonts/Merriweather-Regular.ttf') format('truetype'); /* Super Modern Browsers */
+}
