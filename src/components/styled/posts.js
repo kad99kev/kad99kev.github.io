@@ -57,7 +57,7 @@ export const ArticleBody = styled.div `
   }
   p {
     font-size: 1rem;
-    font-family: "GT-Walsheim-Pro-Regular";
+    font-family: "OpenSans-Regular";
     font-weight: 100;
     color: ${variables.fontColour};
     text-align: justify
@@ -92,7 +92,7 @@ export const NaviagtionLi = styled.li`
   }
   a {
     font-size: 1.3rem;
-    font-family: "GT-Walsheim-Pro-Medium";
+    font-family: "GT-Walsheim-Pro-Regular";
     color: ${variables.primaryColour};
   }
 `

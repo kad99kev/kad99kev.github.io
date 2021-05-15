@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import { Link, graphql } from "gatsby"
+import { Link, graphql, navigate } from "gatsby"
 import Img from "gatsby-image"
 import {Tag, ContainerLayout, WorkPost, Category, Intro, SubTitle, Title, Text} from "../components/common"
 import variables from "../data/variables";
@@ -24,7 +24,7 @@ const WorkIndex = ({ data }) => {
               {works.map(({ node }) => {
               const title = node.frontmatter.title || node.fields.slug
                 return (
-                  <WorkPost key={node.fields.slug}>
+                  <WorkPost key={node.fields.slug}  onClick={() => navigate(node.fields.slug)}>
                     <div className="media">
                       <div className="image-wrapper" style={{ margin: "0px" }}>
                         <Link to={node.fields.slug}>

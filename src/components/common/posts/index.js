@@ -30,7 +30,8 @@ export const SubTitle = styled.h3`
 export const Text = styled.p`
   font-size: .98rem;
   line-height: 2;
-  color: ${variables.fontColour};
+  font-family: "OpenSans-Regular";
+  color: ${variables.titleColour};
   margin-top: 2rem;
   text-align: justify;
   @media(max-width: ${variables.breakpointPhone}) {
@@ -90,6 +91,7 @@ export const WorkPost = styled.article`
     }
   }
   &:hover {
+    cursor: pointer;
     > div.media > .image-wrapper > a > div {
       transform: scale(1.2) rotate(8deg);
     }
@@ -97,12 +99,12 @@ export const WorkPost = styled.article`
 `
 export const Category = styled.span`
   font-family: "GT-Walsheim-Pro-Bold";
-  color: ${variables.primaryColour};
+  color: ${variables.linkColour};
   text-transform: uppercase;
   letter-spacing: .05em;
   font-size: .8em;
   border-radius: .25rem;
   padding: .5rem 1rem;
   margin-right: 1rem;
-  border: 3px solid ${variables.primaryColour};
+  border: 3px solid ${variables.linkColour};
 `

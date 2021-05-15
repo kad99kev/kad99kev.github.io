@@ -26,8 +26,9 @@ export const Title = styled.h1`
   color: ${variables.primaryColour};
 `
 export const Text = styled.p`
-  font-size: 1.2rem;
+  font-size: 1rem;
   line-height: 2;
+  font-family: 'OpenSans-Regular';
   color: ${variables.fontColour};
   a {
     color: #3F51B5;
@@ -36,7 +37,7 @@ export const Text = styled.p`
 `
 export const SubTitle = styled.h2`
   color: ${variables.primaryColour};
-  font-family: "GT-Walsheim-Pro-Medium";
+  font-family: "GT-Walsheim-Pro-Regular";
   margin-top: 3rem;
   margin-bottom: 2rem;
   text-align: center;

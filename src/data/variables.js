@@ -11,7 +11,7 @@ const varibles = {
   primaryColour: "#ffa69e",
   backgroundColour: "#5e6472",
   fontColour: "#faf3dd",
-  linkColour: "#aed9e0",
+  linkColour: "#C7CA93",
   titleColour: "#b8f2e6",
   subTitleColour: "#e2c6b1",
 

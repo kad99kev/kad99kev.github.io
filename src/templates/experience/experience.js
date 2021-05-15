@@ -9,7 +9,6 @@ import {ContainerLayout} from '../../components/common'
 
 const experienceWork = ({data, pageContext, location}) => {
   const work = data.markdownRemark
-  console.log(work);
   const siteTitle = data.site.siteMetadata.title
 
   return (

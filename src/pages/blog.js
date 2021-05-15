@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import { Link, graphql } from "gatsby"
+import { Link, graphql, navigate } from "gatsby"
 import { Calendar, Clock } from 'react-feather'
 import Img from "gatsby-image"
 import {ContainerLayout, WorkPost, Intro, SubTitle, Title, Text, HeaderIntro, SubText, SmallText, UnderLink, ReadMore} from "../components/common"
@@ -15,7 +15,7 @@ const BlogIndex = ({ data }) => {
   return (
     <>
       <Layout> 
-        <Seo title="Blog Home Page" />
+        <Seo title="Personal Blog" />
         <Intro>
           <ContainerLayout>
 
@@ -33,7 +33,7 @@ const BlogIndex = ({ data }) => {
                 {posts.map(({ node }) => {
                 const title = node.frontmatter.title || node.fields.slug
                 return (
-                  <WorkPost key={node.fields.slug}>
+                  <WorkPost key={node.fields.slug}  onClick={() => navigate(node.fields.slug)}>
                     <div className="media" style={{ paddingBottom: "0.5rem" }}>
                       <div className="image-wrapper">
                         <Link to={node.fields.slug}>

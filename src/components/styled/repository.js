@@ -60,10 +60,11 @@ export const RepoHead = styled.div`
 export const Text = styled.p`
   margin-bottom: 1rem;
   margin-top: .25rem;
-  font-size: 1rem;
+  font-size: 0.9rem;
   @media(max-width: ${variables.breakpointPhone}) {
-    font-size: .9rem;
+    font-size: .8rem;
   }
+  font-family: "OpenSans-Regular";
   color: ${variables.fontColour};
 `
 export const FooterItem = styled.span`
@@ -71,7 +72,7 @@ export const FooterItem = styled.span`
   margin-bottom: 1rem;
   font-size: .9rem;
   color: ${variables.titleColour};
-  font-family: "GT-Walsheim-Pro-Medium";
+  font-family: "GT-Walsheim-Pro-Regular";
   vertical-align: middle;
   display: inline-block;
   > * {

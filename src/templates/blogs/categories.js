@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { Link, graphql } from "gatsby"
+import { Link, graphql, navigate } from "gatsby"
 import { Calendar, Clock } from 'react-feather'
 import Img from "gatsby-image"
 import CategoriesTags from '../../components/CategoriesTags/categoriesTags';
@@ -16,7 +16,7 @@ const Categories = ({ data }) => {
 
   return (
     <Layout> 
-      <Seo title="Blog Home Page" />
+      <Seo title="Personal Blog" />
       <Intro>
         <ContainerLayout>
 
@@ -25,7 +25,7 @@ const Categories = ({ data }) => {
           </SubTitle>
           <HeaderIntro>
             <SubText>
-              Articles on front-end design engineering, focused on HTML, CSS, SVG, accessiblity, and everything in between, with practical tips from real projects. Included here are links to articles published on magazines.
+            Sharing my thoughts, experiences and observations for all to read.
             </SubText>
             <CategoriesTags /> 
           </HeaderIntro>
@@ -34,7 +34,7 @@ const Categories = ({ data }) => {
             {edges.map(({ node }) => {
               const title = node.frontmatter.title || node.fields.slug
               return (
-                <WorkPost key={node.fields.slug}>
+                <WorkPost key={node.fields.slug} onClick={() => navigate(node.fields.slug)}>
                   <div className="media">
                     <div className="image-wrapper">
                       <Link to={node.fields.slug}>

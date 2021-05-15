@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import variables from '../../../data/variables';
 
 export const Tag = styled.a`
-  color: #a9aaab;
+  color: ${variables.primaryColour};
   text-transform: uppercase;
   letter-spacing: .05em;
   font-size: .8em;
@@ -15,7 +15,7 @@ export const Tag = styled.a`
   margin-bottom: 1rem;
   &.active {
     background: ${variables.primaryColour};
-    color: ${variables.linkColour};
+    color: ${variables.backgroundColour};
     font-family: "GT-Walsheim-Pro-Bold";
   }
 `
