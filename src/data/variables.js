@@ -8,12 +8,19 @@ const varibles = {
   // titleColour: "#56B8CF",
   // subTitleColour: "white",
 
-  primaryColour: "#ffa69e",
-  backgroundColour: "#5e6472",
-  fontColour: "#faf3dd",
-  linkColour: "#C7CA93",
-  titleColour: "#b8f2e6",
-  subTitleColour: "#e2c6b1",
+  // primaryColour: "#ffa69e",
+  // backgroundColour: "#5e6472",
+  // fontColour: "#faf3dd",
+  // linkColour: "#C7CA93",
+  // titleColour: "#b8f2e6",
+  // subTitleColour: "#e2c6b1",
+
+  primaryColour: "#d62828",
+  backgroundColour: "#FFF5EE",
+  fontColour: "#212529",
+  linkColour: "#6c757d",
+  titleColour: "#22223b",
+  subTitleColour: "#495057",
 
   // Grid
   width: "96%",

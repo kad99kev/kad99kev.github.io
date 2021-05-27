@@ -135,7 +135,7 @@ export const GlobalStyle = createGlobalStyle`
     display: block;
     width: 100%;
     height: 5px;
-    background-color: ${variables.fontColour};
+    background-color: ${variables.linkColour};
     transform: scale(0, 1);
     transform-origin: 100% 50%;
     will-change: transform;

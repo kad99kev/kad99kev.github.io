@@ -60,7 +60,7 @@ export const ResumeButton = styled.a`
   font-size: 1rem;
   letter-spacing: 2px;
   font-family: "GT-Walsheim-Pro-Regular";
-  border: 5px solid #e8e7e7;
+  border: 5px solid ${colors.titleColour};
   display: block;
   margin: 6rem 0 2rem 0;
   padding: 2rem;

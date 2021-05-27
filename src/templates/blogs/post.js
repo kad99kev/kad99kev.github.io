@@ -6,7 +6,7 @@ import { Calendar, Clock } from 'react-feather'
 import Img from "gatsby-image"
 import {Intro, Title, ArticlePost, SmallText, ArticleBody, NaviagtionList, NaviagtionLi } from '../../components/styled/posts'
 import {ContainerLayout} from '../../components/common'
-
+import variables from "../../data/variables"
 
 const BlogPost = ({data, pageContext, location}) => {
   const post = data.markdownRemark
@@ -29,11 +29,11 @@ const BlogPost = ({data, pageContext, location}) => {
                   </Title>
                   <SmallText> 
                     <Calendar className="align-middle text-primary" width="18" height="18" /> 
-                    <span className="align-middle"> date published : {post.frontmatter.date} </span>
+                    <span className="align-middle"> date published : <span style={{color: variables.linkColour}}> {post.frontmatter.date} </span> </span>
                   </SmallText>
                   <SmallText> 
                     <Clock className="align-middle text-primary" width="18" height="18" /> 
-                    <span className="align-middle"> estimated read time : {post.frontmatter.time} </span>
+                    <span className="align-middle"> estimated read time : <span style={{color: variables.linkColour}}> {post.frontmatter.time} </span> </span>
                   </SmallText>
                 </header>
                 <div style={{ marginTop: 1 + `rem` }}>

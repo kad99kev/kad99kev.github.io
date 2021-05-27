@@ -81,8 +81,8 @@ export const NaviagtionList = styled.ul`
   grid-row-gap: 5rem;
   list-style: none;
   padding: 0;
-  border-top: 4px solid ${variables.titleColour};
-  border-bottom: 4px solid ${variables.titleColour};
+  border-top: 4px solid ${variables.linkColour};
+  border-bottom: 4px solid ${variables.linkColour};
   color: ${variables.primaryColour};
 `
 export const NaviagtionLi = styled.li`

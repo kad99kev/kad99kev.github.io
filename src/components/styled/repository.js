@@ -28,7 +28,7 @@ export const Avatar = styled.div`
 
 export const RepoContent = styled.div`
   border-radius: .5rem;
-  border: 1px solid #e1e4e8;
+  border: 1px solid ${variables.titleColour};
   margin-bottom: 2rem;
   padding: 1rem;
   font-size: 16;

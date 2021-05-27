@@ -3,8 +3,8 @@ title: Awards 🏆
 date: "2015-05-06T23:46:37.121Z"
 category: Extra-Curriculum
 tags: ['Hackathons', 'Competitions']
-image: "./blog-image.jpg"
-description: "This section describes the various competitions I have won during my undergradute studies."  
+image: "./KJAward.jpeg"
+description: "This section describes the various competitions I have won during my undergradute studies. The picture is me holding the trophy our college football team won at a tournment :D"  
 ---
 
 ---
