@@ -7,7 +7,7 @@ const HeroContainer = styled.div`
   position: relative;
   display: table;
   width: 100%;
-  height: 400px;
+  height: 500px;
   overflow: hidden;
   background-repeat: no-repeat;
   background-position: center;
@@ -27,15 +27,7 @@ const HeroTitle = styled.h1`
   font-size: 3rem;
   margin: 10px 50px;
   color: var(--color-white);
-  text-shadow:
-        0.05em 0 black,
-        0 0.05em black,
-        -0.05em 0 black,
-        0 -0.05em black,
-        -0.05em -0.05em black,
-        -0.05em 0.05em black,
-        0.05em -0.05em black,
-        0.05em 0.05em black;
+  text-shadow: 1px 1px 4px rgba(34, 34, 34, 0.85);
 `
 
 const HeroSubTitle = styled.h2`

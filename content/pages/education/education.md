@@ -1,11 +1,11 @@
 ---
 title: Education 👨‍🎓
 slug: education
-cover: ./SecondPlace.jpg
+cover: ./hatgad.webp
 disqus: false
 ---
 
-![Second Place](SecondPlace.jpg)
+![Second Place](SecondPlace.webp)
 
 ## Fr. Conceicao Rodrigues College of Engineering, Mumbai
 <h4>Computer Engineering</h4>

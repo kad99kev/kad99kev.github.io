@@ -1,11 +1,13 @@
 ---
 title: "About Me 👨"
 slug: about-me
-cover: ./gatsby-cover.png
+cover: ./newyork.webp
 disqus: true
 ---
 
 ![Image of me](./profile.webp)
+
+---
 
 Hello, I'm **Kevlyn Kadamala**! Welcome to my personal website!
 
@@ -13,7 +15,24 @@ The main reason I went with a website with a blog is because I wanted to instill
 
 In the meantime, if you would like to know more about me, head down below!
 
+## Where my interests lie?
+- Artificial Intelligence
+- Deep Learning
+- Reinforcement Learning
+
+## What I like to do?
+- Play football
+- Go for a jog
+- Read books
+- Listen to music
+
+## Random Information!
+- My favourite football club is [Arsenal](https://www.arsenal.com/)
+- I can play as a Full Back, Centre Back or as a Centre Defensive Midfielder
+- My favourite genres of music are Alternative and Indie
+
 ## Some software tools and frameworks I am familiar with :D
+
 
 ![](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![](https://img.shields.io/badge/PyTorch%20-%23EE4C2C.svg?&style=for-the-badge&logo=PyTorch&logoColor=white)

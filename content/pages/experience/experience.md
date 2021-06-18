@@ -1,7 +1,7 @@
 ---
 title: "Work Experience 👨‍💻"
 slug: experience
-cover: ./gatsby-cover.png
+cover: ./sealink.webp
 disqus: false
 ---
 

@@ -15,7 +15,7 @@ module.exports = {
   disqusSiteUrl: 'https://kad99kev.disqus.com/',
   // Prefixes all links. For cases when deployed to maxpou.fr/gatsby-starter-morning-dew/
   pathPrefix: '/', // Note: it must *not* have a trailing slash.
-  siteCover: 'background.png', // file in content/images
+  siteCover: 'background.jpeg', // file in content/images
   background_color: '#ff96ad',
   theme_color: '#222222',
   display: 'standalone',

@@ -51,7 +51,7 @@ const FooterLine = styled.div`
 
 const PreviewCover = styled.div`
   width: auto;
-  height: 200px;
+  height: 300px;
   background: #c5d2d9 no-repeat 50%;
   background-size: cover;
   border-radius: 5px 5px 5px 5px;

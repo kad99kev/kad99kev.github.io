@@ -1,11 +1,11 @@
 ---
 title: Awards 🏆
 slug: awards
-cover: ./football.jpeg
+cover: ./niagara.webp
 disqus: false
 ---
 
-![KJ Trophy](football.jpeg)
+![KJ Trophy](football.webp)
 
 ## Smart India Hackathon
 
