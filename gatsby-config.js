@@ -1,92 +1,96 @@
-const data = require('./src/data/data');
+const path = require('path')
+const config = require('./data/siteConfig')
 
-require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`,
-});
 module.exports = {
   siteMetadata: {
-    title: data.SiteTitle,
-    description: data.SiteDescription,
-    author: data.SiteAuthor,
+    title: config.siteTitle,
+    author: config.authorName,
+    description: config.siteDescription,
+    ...config,
   },
+  pathPrefix: config.pathPrefix,
   plugins: [
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-styled-components`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `blog`,
-        path: `${__dirname}/src/data/blog`,
+        name: 'posts',
+        path: 'content/posts',
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `experience`,
-        path: `${__dirname}/src/data/experience`,
+        name: 'pages',
+        path: 'content/pages',
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/assets/img`,
+        name: 'images',
+        path: 'content/images',
       },
     },
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: `gatsby-plugin-page-creator`,
       options: {
-        plugins: [
+        path: path.join(__dirname, `src`, `pages`),
+      },
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.mdx`, `.md`],
+        defaultLayouts: {
+          default: require.resolve('./src/templates/page.js'),
+        },
+        gatsbyRemarkPlugins: [
           {
-            resolve: `gatsby-remark-images`,
+            resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 590,
+              linkImagesToOriginal: false,
+              withWebp: true,
             },
           },
-          {
-            resolve: `gatsby-remark-responsive-iframe`,
-            options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`,
-            },
-          },
-          `gatsby-remark-prismjs`,
-          `gatsby-remark-copy-linked-files`,
-          `gatsby-remark-smartypants`,
+          { resolve: 'gatsby-remark-prismjs' },
+          { resolve: 'gatsby-remark-responsive-iframe' },
+          { resolve: 'gatsby-remark-copy-linked-files' },
+          { resolve: 'gatsby-remark-smartypants' },
+          { resolve: 'gatsby-remark-autolink-headers' },
         ],
       },
     },
+    // Reminder (https://github.com/gatsbyjs/gatsby/issues/15486#issuecomment-509405867)
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [`gatsby-remark-images`],
+      },
+    },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-offline`,
+    `gatsby-plugin-styled-components`,
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `kad99kev-portfolio`,
-        short_name: `kad99kev`,
-        start_url: `/`,
-        background_color: `#000`,
-        theme_color: `#000`,
-        display: `minimal-ui`,
-        icon: `src/assets/img/portfolio-icon.png`, // This path is relative to the root of the site.
+        name: config.siteTitle,
+        short_name: config.siteTitle,
+        start_url: config.pathPrefix,
+        background_color: config.background_color,
+        theme_color: config.theme_color,
+        display: config.display,
+        icon: config.icon,
       },
     },
+    // https://www.gatsbyjs.org/docs/themes/converting-a-starter/#transpiling-your-theme-with-webpack
     {
-      resolve: `gatsby-source-github-api`,
+      resolve: 'gatsby-plugin-compile-es6-packages',
       options: {
-        token: process.env.GATSBY_GITHUB_API_TOKEN,
-        graphQLQuery: data.githubApiQuery,
-        variables: data.githubApiVariables,
+        modules: ['gatsby-starter-morning-dew'],
       },
     },
-    // https://www.gatsbyjs.org/packages/gatsby-plugin-google-analytics/
-    // {
-    //   resolve: `gatsby-plugin-google-analytics`,
-    //   options: {
-    //       trackingId: process.env.GATSBY_GOOGLE_ANALYTICS,
-    //       head: true,
-    //   },
-    // },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    `gatsby-plugin-offline`,
   ],
 }

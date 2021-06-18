@@ -1,116 +1,155 @@
-const path = require(`path`)
-const _ = require("lodash")
-const { createFilePath } = require(`gatsby-source-filesystem`)
+const { createFilePath } = require('gatsby-source-filesystem')
 
-exports.createPages = async ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
-  const blogPost = path.resolve(`./src/templates/blogs/post.js`)
-  const categoriesTemplate = path.resolve("src/templates/blogs/categories.js")
-  const experienceWork = path.resolve(`./src/templates/experience/experience.js`)
-  const blogResult = await graphql(
-    `
-      {
-        blogGroup: allMarkdownRemark(
-          filter: {fileAbsolutePath: {regex: "/(blog)/"}}
-          sort: { fields: [frontmatter___date], order: DESC }
-          limit: 1000
-        ) {
-          edges {
-            node {
-              fields {
-                slug
-              }
-              frontmatter {
-                title
-                categories
-              }
-            }
-          }
-        }
-        categoriesGroup: allMarkdownRemark(limit: 2000) {
-          group(field: frontmatter___categories) {
-            fieldValue
-          }
-        }
-      }
-    `
+
+  const BlogPostTemplate = require.resolve('./src/templates/blog-post.js')
+  const BlogPostShareImage = require.resolve(
+    './src/templates/blog-post-share-image.js'
   )
-  const worksResult = await graphql(
-    `
-      {
-        allMarkdownRemark(
-          filter: {fileAbsolutePath: {regex: "/(experience)/"}}
-          sort: { fields: [frontmatter___date], order: DESC }
-          limit: 1000
-        ) {
-          edges {
-            node {
-              fields {
-                slug
-              }
-              frontmatter {
-                title
-              }
-            }
-          }
-        }
-      }
-    `
+  const PageTemplate = require.resolve('./src/templates/page.js')
+  const PostsBytagTemplate = require.resolve('./src/templates/tags.js')
+  const ListPostsTemplate = require.resolve(
+    './src/templates/blog-list-template.js'
   )
 
-  if (blogResult.errors || worksResult.errors) {
-    throw blogResult.errors
+  const allMarkdownQuery = await graphql(`
+    {
+      allMarkdown: allMdx(
+        sort: { fields: [frontmatter___date], order: DESC }
+        filter: { frontmatter: { published: { ne: false } } }
+        limit: 1000
+      ) {
+        edges {
+          node {
+            fileAbsolutePath
+            frontmatter {
+              title
+              slug
+              tags
+              language
+              cover {
+                publicURL
+              }
+              unlisted
+            }
+            timeToRead
+            excerpt
+          }
+        }
+      }
+    }
+  `)
+
+  if (allMarkdownQuery.errors) {
+    reporter.panic(allMarkdownQuery.errors)
   }
 
-  // Create blog posts pages.
-  const posts = blogResult.data.blogGroup.edges
-  const works = worksResult.data.allMarkdownRemark.edges
-  
-  posts.forEach((post, index) => {
+  const postPerPageQuery = await graphql(`
+    {
+      site {
+        siteMetadata {
+          postsPerPage
+        }
+      }
+    }
+  `)
+
+  const markdownFiles = allMarkdownQuery.data.allMarkdown.edges
+
+  const posts = markdownFiles.filter(item =>
+    item.node.fileAbsolutePath.includes('/content/posts/')
+  )
+
+  const listedPosts = posts.filter(
+    item => item.node.frontmatter.unlisted !== true
+  )
+
+  // generate paginated post list
+  const postsPerPage = postPerPageQuery.data.site.siteMetadata.postsPerPage
+  const nbPages = Math.ceil(listedPosts.length / postsPerPage)
+
+  Array.from({ length: nbPages }).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? `/` : `/pages/${i + 1}`,
+      component: ListPostsTemplate,
+      context: {
+        limit: postsPerPage,
+        skip: i * postsPerPage,
+        currentPage: i + 1,
+        nbPages: nbPages,
+      },
+    })
+  })
+
+  // generate blog posts
+  posts.forEach((post, index, posts) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node
     const next = index === 0 ? null : posts[index - 1].node
 
     createPage({
-      path: post.node.fields.slug,
-      component: blogPost,
+      path: post.node.frontmatter.slug,
+      component: BlogPostTemplate,
       context: {
-        slug: post.node.fields.slug,
+        slug: post.node.frontmatter.slug,
         previous,
         next,
       },
     })
 
-    // Extract tag data from query
-    const categories = blogResult.data.categoriesGroup.group
-    // Make tag pages
-    categories.forEach(category => {
+    // generate post share images (dev only)
+    if (process.env.gatsby_executing_command.includes('develop')) {
       createPage({
-        path: `/${_.kebabCase(category.fieldValue)}/`,
-        component: categoriesTemplate,
+        path: `${post.node.frontmatter.slug}/image_share`,
+        component: BlogPostShareImage,
         context: {
-          category: category.fieldValue,
+          slug: post.node.frontmatter.slug,
+          width: 440,
+          height: 220,
         },
       })
+    }
   })
-  })
-  works.forEach((work) => {
-    createPage({
-      path: work.node.fields.slug,
-      component: experienceWork,
-      context: {
-        slug: work.node.fields.slug
-      },
+
+  // generate pages
+  markdownFiles
+    .filter(item => item.node.fileAbsolutePath.includes('/content/pages/'))
+    .forEach(page => {
+      createPage({
+        path: page.node.frontmatter.slug,
+        component: PageTemplate,
+        context: {
+          slug: page.node.frontmatter.slug,
+        },
+      })
     })
-  })
+
+  // generate tag page
+  markdownFiles
+    .filter(item => item.node.frontmatter.tags !== null)
+    .reduce(
+      (acc, cur) => [...new Set([...acc, ...cur.node.frontmatter.tags])],
+      []
+    )
+    .forEach(uniqTag => {
+      createPage({
+        path: `tags/${uniqTag}`,
+        component: PostsBytagTemplate,
+        context: {
+          tag: uniqTag,
+        },
+      })
+    })
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
+
   if (node.internal.type === `MarkdownRemark`) {
     const value = createFilePath({ node, getNode })
     createNodeField({
-      node,
       name: `slug`,
+      node,
       value,
     })
   }
