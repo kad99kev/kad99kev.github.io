@@ -75,6 +75,11 @@ module.exports = {
           label: 'About',
           url: '/about-me',
         },
+        {
+          label: 'Resume',
+          url: 'https://drive.google.com/file/d/10YcQ89ZYcr-7y1c7z7oHM5SoZwCjrgxh/view?usp=sharing',
+          rel: 'external'
+        },
       ],
     },
     {
