@@ -13,6 +13,7 @@ const HeroTitle = styled.h1`
   font-family: "Rubik", serif;
   font-weight: 500;
   font-size: 3rem;
+  margin-bottom: 0.5rem;
   color: var(--color-textSecondary);
 `
 

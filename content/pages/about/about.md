@@ -13,6 +13,8 @@ Hello, I'm **Kevlyn Kadamala**! Welcome to my personal website!
 
 The main reason I went with a website with a blog is because I wanted to instill the habit of writing in myself. So every now and then, I will be sharing my thoughts, ideas, experiences and learnings for all to read!
 
+🚧 *Disclaimer: This website is constantly under development, so things might change!* 🚧 
+
 In the meantime, if you would like to know more about me, head down below!
 
 ## Where my interests lie?

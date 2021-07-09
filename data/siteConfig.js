@@ -7,7 +7,7 @@ module.exports = {
   defaultLang: 'en', // show flag if lang is not default. Leave empty to enable flags in post lists
   authorDescription: `
   Hello, I am Kevlyn Kadamala. 
-  I'm an Undergraduate Student from India living in Mumbai. 
+  I'm a recent graduate of Computer Engineering from India living in Mumbai. 
   My interest majorly lies in Artificial Intelligence, Deep Learning and Reinforcement Learning.
   I am aspiring to become an AI Engineer and a Researcher.
   `,
