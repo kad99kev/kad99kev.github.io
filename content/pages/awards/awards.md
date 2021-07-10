@@ -7,6 +7,24 @@ disqus: false
 
 ![KJ Trophy](football.webp)
 
+<div style="text-align: center;">
+<span style="font-style: italic;">After winning the KJ Somaiya Medical College Football Tournament</span>
+</div>
+
+## 5th International Conference on Inventive Communication and Computational Technologies
+
+<h4>Paper Presentation</h4>
+<h5>JUNE 2021</h5>
+
+We successfully presented our [work](https://github.com/kad99kev/FGTD) and we can expect it to get published soon!
+
+## MacHacks 2021
+
+<h4>Best Quantum Computing Hack</h4>
+<h5>FEBRUARY 2021 </h5>
+
+Our topic was - Delivering Vaccines Using Qiskit and Vehicle Routing Problem. You can find the link to our Devpost Submission [here!](https://devpost.com/software/quantum-computing-submission) Using Qiskit Aqua as the backend, we have created an API that compares classical and quantum solutions for the most efficient VRP over a selected region of the US.
+
 ## Smart India Hackathon
 
 <h4>Winner</h4>
