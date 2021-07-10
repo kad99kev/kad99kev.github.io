@@ -13,11 +13,11 @@ TL;DR - Try to make it as easy and fun as possible at the start. Once you get th
 
 ### Table of Contents (Head on below to your topic of interest :D)
 
-1. [My First Introduction to AI](https://www.notion.so/my-first-introduction-to-ai-857ac3e5e913483ba4b1234d20300294)
-2. [My First Proper Introduction to Machine Learning](https://www.notion.so/my-first-proper-introduction-to-machine-learning-f1c8f8e1db31437d9a7ed427ae58c2c1)
-3. [What Came Next](https://www.notion.so/what-came-next-c328c79b25244e688f93f3eaa0cd451e)
-4. [Where I Went Wrong?](https://www.notion.so/where-i-went-wrong-c4714509172c4253b83cc541a5a0ead4)
-5. [What Am I Doing Now?](https://www.notion.so/what-i-am-doing-now-ce810258d12441c4961c75dcc630d8fe)
+1. [My First Introduction to AI](#my-first-introduction-to-ai)
+2. [My First Proper Introduction to Machine Learning](#my-first-proper-introduction-to-machine-learning)
+3. [What Came Next?](#what-came-next)
+4. [The Mistakes I've Made](#the-mistakes-ive-made)
+5. [What Am I Doing Now?](#what-am-i-doing-now)
 
 ## My First Introduction to AI
 
