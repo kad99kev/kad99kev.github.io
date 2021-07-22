@@ -135,7 +135,7 @@ const ContentBody = styled.div`
     color: #222222cc;
     padding: 0 3px;
     font-size: 0.94em;
-    border-radius: 0.3rem;
+    border-radius: 0.2rem;
     word-wrap: break-word;
   }
 
