@@ -1,5 +1,6 @@
 const path = require('path')
 const config = require('./data/siteConfig')
+const isProduction = process.env.NODE_ENV === 'production'
 
 module.exports = {
   siteMetadata: {
@@ -10,6 +11,13 @@ module.exports = {
   },
   pathPrefix: config.pathPrefix,
   plugins: [
+    {
+      resolve: `gatsby-plugin-goatcounter`,
+      options: {
+        code: isProduction ? 'https://kad99kev-pw.goatcounter.com' : 'https://kad99kev-dev.goatcounter.com',
+        allowLocal: !isProduction,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

@@ -66,6 +66,7 @@
     "terser": "^4.6.11"
   },
   "devDependencies": {
+    "gatsby-plugin-goatcounter": "^0.4.0",
     "gh-pages": "^3.2.2",
     "lighthousebot": "https://github.com/GoogleChromeLabs/lighthousebot",
     "prettier": "^2.2.1",
