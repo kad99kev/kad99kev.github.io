@@ -11,10 +11,15 @@ disqus: false
 <span style="font-style: italic;">This was me receiving an award for finishing 2nd in my Second Year of Engineering</span>
 </div>
 
+## National University of Ireland, Galway
+<h4>MSc in Computer Science – Artificial Intelligence</h4>
+<h5 style="text-align: right">Year of Passing : 2022</h5>
+<h4>Currently Pursuing</h4>
+
 ## Fr. Conceicao Rodrigues College of Engineering, Mumbai
 <h4>Computer Engineering</h4>
 <h5 style="text-align: right">Year of Passing : 2021</h5>
-<h4>Current CGPA: 9.36</h4>
+<h4>CGPA: 9.44</h4>
 
 ## Shri T.P. Bhatia College of Science, Mumbai
 <h4>HSC</h4>
