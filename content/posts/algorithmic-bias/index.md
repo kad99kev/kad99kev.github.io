@@ -225,3 +225,7 @@ hind.” <a target="_blank" href="https://www.theatlantic.com/health/archive/201
 <br/><br/>
 
 <a name="21"></a>[21] “Bias in machine learning: How to measure fairness in algorithms?” <a target="_blank" href="https://www.trilateralresearch.com/bias-in-machine-learning-how-to-measure-fairness-in-algorithms/">https://www.trilateralresearch.com/bias-in-machine-learning-how-to-measure-fairness-in-algorithms/</a>. Accessed: 4th January 2022.
+
+<div style="text-align: center; margin-top: 2rem">
+Photo by <a href="https://unsplash.com/@markusspiske?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Markus Spiske</a> on <a href="https://unsplash.com/s/photos/algorithm?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+</div>
