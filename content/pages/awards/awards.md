@@ -1,7 +1,7 @@
 ---
 title: Awards 🏆
 slug: awards
-cover: ./niagara.webp
+cover: ./galway.webp
 disqus: false
 ---
 
