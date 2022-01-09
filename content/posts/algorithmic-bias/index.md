@@ -5,7 +5,7 @@ date: 2022-01-06
 language: en
 slug: intro-to-algorithmic-bias
 tags: ['ai', 'ethics']
-cover: ./FootballTeam.webp
+cover: ./algorithmic.webp
 generate-card: false
 ---
 
