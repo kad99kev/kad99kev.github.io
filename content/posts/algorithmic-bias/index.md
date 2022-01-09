@@ -41,11 +41,11 @@ opposite mistake among whites. They were more likely labelled to be
 lower risk but go on and commit more crimes.
 
 <figure>
-<img src="images/black-defendant.png" id="fig:black" alt="Black Defendants’ Risk Scores" /><figcaption aria-hidden="true">Black Defendants’ Risk Scores</figcaption>
+<img src="images/black-defendant.png" id="fig:black" alt="Black Defendants’ Risk Scores" /><figcaption style="text-align: center" aria-hidden="true">Black Defendants’ Risk Scores</figcaption>
 </figure>
 
 <figure>
-<img src="images/white-defendant.png" id="fig:white" alt="White Defendants’ Risk Scores" /><figcaption aria-hidden="true">White Defendants’ Risk Scores</figcaption>
+<img src="images/white-defendant.png" id="fig:white" alt="White Defendants’ Risk Scores" /><figcaption style="text-align: center" aria-hidden="true">White Defendants’ Risk Scores</figcaption>
 </figure>
 
 In 2018, researchers conducted a study with Convolution Neural Networks
@@ -64,8 +64,11 @@ systems are established, create a positive feedback loop. Every
 incorrect prediction, every false sentencing and every targeted
 advertisement adds another data point to the already biased system.
 
-![The cascading effect of AI.  
-Image source: The British Medical Journal [[6]](#6)](images/bmj.jpg)
+<figure>
+<img src="images/bmj.jpg" id="fig:white" alt="White Defendants’ Risk Scores" /><figcaption style="text-align: center" aria-hidden="true">The cascading effect of AI.
+<br />
+Image source: The British Medical Journal <a href="#6">[6]</a></figcaption>
+</figure>
 
 The first step that we as developers can take is understanding our
 responsibility. A study was conducted in 2019 where one on one
@@ -93,8 +96,11 @@ on any existing bias. Openness will lead to awareness. It would only
 educate those unaware of algorithmic bias and help them understand its
 implications.
 
-![Some publicly available dataset sources.  
-Image source: Great Learning [[8]](#8)](images/datasets.png)
+<figure>
+<img src="images/datasets.png" id="fig:white" alt="White Defendants’ Risk Scores" /><figcaption style="text-align: center" aria-hidden="true">Some publicly available dataset sources.
+<br />
+Image source: Great Learning <a href="#8">[8]</a></figcaption>
+</figure>
 
 We have to recognize that issues regarding algorithmic fairness usually
 cannot be foreseen or detected before launch [[9]](#9). It often includes
