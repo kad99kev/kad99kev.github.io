@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head>
+  
+                           
+     
+
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.102.0" />
+<title>Deep Learning on the Apple Silicon | Kevlyn Kadamala</title>
+
+
+<meta property="twitter:site" content="@kad99kev">
+<meta property="twitter:creator" content="@kad99kev">
+
+
+
+
+
+
+
+  
+    
+  
+<meta name="description" content="This article will walk you through the setup procedure, training and logging on an Apple Silicon device.">
+
+
+<meta property="og:site_name" content="Kevlyn Kadamala">
+<meta property="og:title" content="Deep Learning on the Apple Silicon | Kevlyn Kadamala">
+<meta property="og:description" content="This article will walk you through the setup procedure, training and logging on an Apple Silicon device." />
+<meta property="og:type" content="page" />
+<meta property="og:url" content="https://kad99kev.github.io/klog/training-on-the-m1/" />
+<meta property="og:locale" content="en">
+
+
+
+
+    
+        <meta property="og:image" content="https://kad99kev.github.io/klog/training-on-the-m1/featured.webp" >
+        <meta property="twitter:card" content="summary_large_image">
+        <meta name="twitter:image" content="https://kad99kev.github.io/klog/training-on-the-m1/featured.webp" >
+    
+    
+  <meta itemprop="name" content="Deep Learning on the Apple Silicon">
+<meta itemprop="description" content="At the end of last year, I decided to switch my Mac 2013 for the latest Mac Mini with the Apple Silicon. This meant that initially some of the packages that supported the x86 chip could not natively run on the M1 chip. But what I was looking forward to the most was setting up TensorFlow and PyTorch onto my conda environment.
+In this article, I will be walking you through my setup procedure, train a MobileNet model and compare the results (using Weights and Biases) from my other devices."><meta itemprop="datePublished" content="2021-07-22T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-07-22T00:00:00+00:00" />
+<meta itemprop="wordCount" content="897"><meta itemprop="image" content="https://kad99kev.github.io/klog/training-on-the-m1/featured.webp">
+<meta itemprop="keywords" content="" />
+  
+<script type="application/javascript">
+var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+var doNotTrack = (dnt == "1" || dnt == "yes");
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-173936491-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+  
+<script type="application/javascript">
+var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+var doNotTrack = (dnt == "1" || dnt == "yes");
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-173936491-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+  <!--[if IE]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+  <link rel="icon" href="/img/favicon.png" type="image/x-icon">
+  
+  
+  <link rel="stylesheet" href="/style.main.min.508aa34bb4fa7ebfddd6892a4ec251e1ce46ad0e0c5be6380abc84336f01b14e.css" integrity="sha256-UIqjS7T6fr/d1okqTsJR4c5GrQ4MW&#43;Y4CryEM28BsU4=" media="screen">
+  
+  
+  <script src="/panelset.min.ed1ac24b6e16f4e2481e3d1d098ae66f5bc77438aef619e6e266d8ac5b00dc72.js" type="text/javascript"></script>
+  
+  
+  <script src="/main.min.ef3e492ee2d92febc64d07d55e6bb4412113742367bb77151aa48687356560e5.js" type="text/javascript"></script>
+</head>
+<body>
+      <div class="grid-container">
+<header class="site-header pt4 pb2 mb4 bb b--transparent ph5 headroom z-max" role="banner">
+  <nav class="site-nav db dt-l w-100" role="navigation">
+    <a class="site-brand db dtc-l v-mid link no-underline w-100 w-33-l tc tl-l" href="https://kad99kev.github.io/" title="Home">
+      <img src="/img/favicon.png" class="dib db-l h2 w-auto" alt="Kevlyn Kadamala">
+    </a>
+    <div class="site-links db dtc-l v-mid w-100 w-47-l tc tr-l mt3 mt0-l ttu tracked">
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/about/" title="About Me">About</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/publications/" title="Publications">Publications</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 active" href="/klog/" title="Klog">Klog</a>
+      
+      
+    </div>
+  </nav>
+</header>
+
+<main class="page-main pa4" role="main">
+  <section class="page-content mw7 center">
+    <article class="post-content pa0 ph4-l">
+      <header class="post-header">
+        <h1 class="f1 lh-solid measure-narrow mb3 fw4">Deep Learning on the Apple Silicon</h1>
+        
+        <p class="f6 measure lh-copy mv1">By Kevlyn Kadamala in <a href="https://kad99kev.github.io/categories/ai">AI</a> </p>
+        <p class="f7 db mv0 ttu">July 22, 2021</p>
+
+      
+
+      </header>
+      <section class="post-body pt5 pb4">
+        <p>At the end of last year, I decided to switch my Mac 2013 for the latest Mac Mini with the Apple Silicon. This meant that initially some of the packages that supported the x86 chip could not natively run on the M1 chip. But what I was looking forward to the most was setting up TensorFlow and PyTorch onto my conda environment.</p>
+<p>In this article, I will be walking you through my setup procedure, train a MobileNet model and compare the results (using Weights and Biases) from my other devices.</p>
+<p>You will find the code and all its requirements in my GitHub repository here - 
+<a href="https://github.com/kad99kev/TFonMac" target="_blank" rel="noopener">TFonMac</a></p>
+
+
+
+
+<h2 id="table-of-contents">Table of Contents
+  <a href="#table-of-contents"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<ol>
+<li>
+<a href="#1-setting-up">Setting Up</a></li>
+<li>
+<a href="#2-training-a-model">Training a Model</a></li>
+<li>
+<a href="#3-observations">Observations</a></li>
+<li>
+<a href="#4-conclusion">Conclusion</a></li>
+</ol>
+
+
+
+
+<h2 id="1-setting-up">1. Setting Up
+  <a href="#1-setting-up"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+
+
+
+
+<h3 id="step-1-downloading-miniforge-creating-a-virtual-environment">Step 1: Downloading Miniforge (Creating a virtual environment)
+  <a href="#step-1-downloading-miniforge-creating-a-virtual-environment"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h3>
+<p>My entire setup procedure will be from the perspective of using the Apple Silicon. I highly recommend using a virtual environment for this. I use Miniforge. You can download the same 
+<a href="https://github.com/conda-forge/miniforge" target="_blank" rel="noopener">here</a>. Make sure you download the installer for arm64 (<code>Miniforge3-MacOSX-arm64</code>).</p>
+<p>Once you have your environment ready, activate it using <code>conda activate &lt;env-name&gt;</code>.</p>
+
+
+
+
+<h3 id="step-2-cloning-the-repository">Step 2: Cloning the Repository
+  <a href="#step-2-cloning-the-repository"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h3>
+<p>Then clone the repository using git - <code>git clone https://github.com/kad99kev/TFonMac.git</code></p>
+
+
+
+
+<h3 id="step-3-downloading-the-requirements">Step 3: Downloading the Requirements
+  <a href="#step-3-downloading-the-requirements"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h3>
+<p>Once the repository is cloned, run - <code>pip install -r m1-requirements.txt</code></p>
+<p>Now just in case NumPy throws an error, you can install it directly with conda using - <code>conda install numpy</code></p>
+<p>It took away this error that I was getting while trying to install it via pip.</p>
+<p>We will be using TensorFlow Datasets to download the Cifar-10 dataset. The URL links are releases from TensorFlow that contain &ldquo;Mac-optimised TensorFlow and TensorFlow Addons&rdquo;. The link for that is 
+<a href="https://github.com/apple/tensorflow_macos" target="_blank" rel="noopener">here</a>. The repository is currently archived as TensorFlow v2.5  provides accelerated training with Metal (you can find more here), and it only works with macOS 12.0+</p>
+<p>For people with Big Sur (like me), there would be no problem installing these libraries. However, on execution TensorFlow, would throw an error. Hence, I had to revert to the URLs that I linked above. I am interested in trying this method again once I have the Monterrey update. Once I do, I will write an updated article and compare the results from this experiment to the new one.</p>
+
+
+
+
+<h2 id="2-training-a-model">2. Training a Model
+  <a href="#2-training-a-model"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<p>To compare the runtime, performance and GPU/CPU utilisation of the different devices, I followed the training script and procedures from 
+<a href="https://wandb.ai/vanpelt/m1-benchmark/reports/Can-Apple-s-M1-help-you-train-models-faster-cheaper-than-NVIDIA-s-V100---VmlldzozNTkyMzg" target="_blank" rel="noopener">this article</a>. The author provided a Google Colaboratory notebook. I converted this into Python scripts which makes it easier to use later if required.</p>
+<p>Understanding the structure of the repository will help you tweak your experiment; if you want to try it, I will explain the repository structure below</p>
+<pre tabindex="0"><code>project
+│   main.py (Run this to run the experiment)
+│   config.py (Configure parameters for your experiment)
+│
+└───utils
+    │   info.py (Retreives information about the hardware and the model)
+    │   preprocess.py (Image preprocessing functions)
+    │   train.py (Main training loop)
+</code></pre><p>In case you want to switch to GPU/CPU mode for the M1 chip, you can find it in <code>utils/info.py</code> and set <code>mlcompute.set_mlc_device(device_name=&quot;...&quot;)</code> to <code>&quot;gpu&quot;</code>, <code>&quot;cpu&quot;</code> or <code>&quot;any&quot;</code></p>
+<p>Once <code>main.py</code> is executed, training should start. The model, metrics and performance data will automatically get logged with Weights and Biases (you might need to log in if you are a new user).</p>
+
+
+
+
+<h2 id="3-observations">3. Observations
+  <a href="#3-observations"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<p>You can find my training dashboard 
+<a href="https://wandb.ai/kad99kev/m1-benchmark" target="_blank" rel="noopener">here</a>.</p>
+<p>I have tracked five runs in total, three on the Mac Mini (under the <code>gpu/cpu/any</code> setting), one on my Macbook Air and one with Google Colaboratory.</p>
+
+
+
+
+<h3 id="training-curves">Training Curves
+  <a href="#training-curves"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h3>
+<p>The training curves for the Mac Mini are pretty similar, while the training curves on the Macbook and Google Colaboratory share patterns. The difference, however, lies in validation. The Mac Mini under the cpu and any settings show low validation accuracy, validation top k accuracy and a high validation loss. I have no idea why we observe this behaviour, and if you do, please reach out to me! The Mac Mini under the <code>gpu</code> setting shows improvement along with the Macbook Air and Google Colaboratory, with the validation loss slightly decreasing and the validation accuracy along with the top k accuracy much higher than previously observed.</p>
+
+
+
+
+<h3 id="gpucpu-utilisation">GPU/CPU Utilisation
+  <a href="#gpucpu-utilisation"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h3>
+<p>From the charts, it is evident that the Mac Mini under the <code>gpu</code> setting utilises the GPU for around 90% of the time. Under the same settings, it utilises the CPU for ~15% of the time. What I do find weird (or maybe it&rsquo;s expected?) is the amount of CPU and GPU being utilised under the <code>cpu</code> and <code>any</code> setting. I was expecting the <code>gpu</code> to train the fastest, but it took around 35m 29s for its execution to complete. Meanwhile using <code>cpu</code> took 31m 18s and <code>any</code> took almost the same amount of time (31m 22s).</p>
+
+
+
+
+<h2 id="4-conclusion">4. Conclusion
+  <a href="#4-conclusion"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<p>It was honestly my first time playing around with hardware settings, so I am not quite sure about most of the reasons behind what I observed. However, I am excited to experiment more, and I am eagerly waiting for 
+<a href="https://developer.apple.com/metal/tensorflow-plugin/" target="_blank" rel="noopener">TensorFlow v2.5 with Metal</a>. Once it is available to me, I will experiment again to look for any change in speed and performance. Until then, take care and stay safe! 😄</p>
+
+
+
+
+<h2 id="references">References
+  <a href="#references"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<ol>
+<li>
+<a href="https://caffeinedev.medium.com/how-to-install-tensorflow-on-m1-mac-8e9b91d93706" target="_blank" rel="noopener">How To Install TensorFlow on M1 Mac (The Easy Way)</a></li>
+<li>
+<a href="https://wandb.ai/vanpelt/m1-benchmark/reports/Can-Apple-s-M1-help-you-train-models-faster-cheaper-than-NVIDIA-s-V100---VmlldzozNTkyMzg" target="_blank" rel="noopener">Can Apple&rsquo;s M1 help you train models faster &amp; cheaper than NVIDIA&rsquo;s V100?</a></li>
+<li>
+<a href="https://developer.apple.com/metal/tensorflow-plugin/" target="_blank" rel="noopener">Getting Started with tensorflow-metal PluggableDevice</a></li>
+<li>
+<a href="https://stackoverflow.com/questions/67167886/make-tensorflow-use-the-gpu-on-an-arm-mac" target="_blank" rel="noopener">A useful thread on stackoverflow</a></li>
+</ol>
+<div style="text-align: center; margin-top: 2rem">
+<span>Image Credits: <a href="https://unsplash.com/photos/LMpaFri1PXk">Joey Banks via Unsplash</a></span>
+</div>
+        
+        <details closed class="f6 fw7 input-reset">
+  <dl class="f6 lh-copy">
+    <dt class="fw7">Posted on:</dt>
+    <dd class="fw5 ml0">July 22, 2021</dd>
+  </dl>
+  <dl class="f6 lh-copy">
+    <dt class="fw7">Length:</dt>
+    <dd class="fw5 ml0">5 minute read, 897 words</dd>
+  </dl>
+  
+  <dl class="f6 lh-copy">
+    <dt class="fw7">Categories:</dt>
+    <dd class="fw5 ml0"> <a href="https://kad99kev.github.io/categories/ai">AI</a> </dd>
+  </dl>
+  
+  
+  
+  <dl class="f6 lh-copy">
+    <dt class="fw7">See Also:</dt>
+    
+  </dl>
+</details>
+
+      </section>
+      <footer class="post-footer">
+        <div class="post-pagination dt w-100 mt4 mb2">
+  
+  
+    <a class="prev dtc pr2 tl v-top fw6"
+    href="https://kad99kev.github.io/klog/algorithmic-bias/">&larr; An Introduction to Algorithmic Bias</a>
+  
+  
+  
+    <a class="next dtc pl2 tr v-top fw6"
+    href="https://kad99kev.github.io/klog/my-journey-with-ai/">My Journey with Artificial Intelligence &rarr;</a>
+  
+</div>
+
+      </footer>
+    </article>
+    
+      
+<div class="post-comments pa0 pa4-l mt4">
+  
+  <script src="https://utteranc.es/client.js"
+          repo="kad99kev/kad99kev.github.io"
+          issue-term="pathname"
+          theme="boxy-light"
+          label="comments :crystal_ball:"
+          crossorigin="anonymous"
+          async
+          type="text/javascript">
+  </script>
+  
+</div>
+
+    
+  </section>
+</main>
+<footer class="site-footer pv4 bt b--transparent ph5" role="contentinfo">
+  <nav class="db dt-l w-100">
+    <p class="site-copyright f7 db dtc-l v-mid w-100 w-33-l tc tl-l pv2 pv0-l mv0 lh-copy">
+      &copy; 2022 Kevlyn Kadamala, Galway
+      <span class="middot-divider"></span>
+      Made with <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/hugo-apero/" rel="dct:source">Hugo Apéro</a></span>.
+      <br />
+      
+Based on <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/formspree/blogophonic-hugo" rel="dct:source">Blogophonic</a></span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://formspree.io" property="cc:attributionName" rel="cc:attributionURL">Formspree</a>.
+    </p>
+    
+    <div class="site-social-links db dtc-l v-mid w-100 w-33-l tc pv2 pv0-l mv0">
+      <div class="social-icon-links" aria-hidden="true">
+  
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://github.com/kad99kev" title="github" target="_blank" rel="noopener">
+      <i class="fab fa-github fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://twitter.com/kad99kev" title="twitter" target="_blank" rel="noopener">
+      <i class="fab fa-twitter fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="http://orcid.org/0000-0002-9478-5675" title="orcid" target="_blank" rel="noopener">
+      <i class="ai ai-orcid fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="/blog/index.xml" title="rss" >
+      <i class="fas fa-rss fa-lg fa-fw"></i>
+    </a>
+  
+</div>
+
+    </div>
+    
+    <div class="site-links f6 db dtc-l v-mid w-100 w-67-l tc tr-l pv2 pv0-l mv0">
+      
+      <a class="dib pv1 ph2 link" href="/license/" title="License">License</a>
+      
+      <a class="dib pv1 ph2 link" href="/contact/" title="Contact form">Contact</a>
+      
+    </div>
+  </nav>
+  
+    <script>
+
+    var i, text, code, codes = document.getElementsByTagName('code');
+    for (let i = 0; i < codes.length;) {
+      code = codes[i];
+      if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+        text = code.textContent;
+        if (/^\$[^$]/.test(text) && /[^$]\$$/.test(text)) {
+          text = text.replace(/^\$/, '\\(').replace(/\$$/, '\\)');
+          code.textContent = text;
+        }
+        if (/^\\\((.|\s)+\\\)$/.test(text) ||
+            /^\\\[(.|\s)+\\\]$/.test(text) ||
+            /^\$(.|\s)+\$$/.test(text) ||
+            /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+          code.outerHTML = code.innerHTML;  
+          continue;
+        }
+      }
+      i++;
+    }
+</script>
+
+  
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css" integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js" integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+
+
+    
+  
+  
+</footer>
+
+      </div>
+    </body>
+</html>
