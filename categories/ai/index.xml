@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI on Kevlyn Kadamala</title>
+    <link>https://kad99kev.github.io/categories/ai/</link>
+    <description>Recent content in AI on Kevlyn Kadamala</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 22 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://kad99kev.github.io/categories/ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Deep Learning on the Apple Silicon</title>
+      <link>https://kad99kev.github.io/klog/training-on-the-m1/</link>
+      <pubDate>Thu, 22 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://kad99kev.github.io/klog/training-on-the-m1/</guid>
+      <description>At the end of last year, I decided to switch my Mac 2013 for the latest Mac Mini with the Apple Silicon. This meant that initially some of the packages that supported the x86 chip could not natively run on the M1 chip. But what I was looking forward to the most was setting up TensorFlow and PyTorch onto my conda environment.
+In this article, I will be walking you through my setup procedure, train a MobileNet model and compare the results (using Weights and Biases) from my other devices.</description>
+    </item>
+    
+    <item>
+      <title>My Journey with Artificial Intelligence</title>
+      <link>https://kad99kev.github.io/klog/my-journey-with-ai/</link>
+      <pubDate>Fri, 09 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://kad99kev.github.io/klog/my-journey-with-ai/</guid>
+      <description>TL;DR - Try to make it as easy and fun as possible at the start. Once you get the hang of it, start challenging yourself. Exploring different domains is vital and once you find your niche, delve in deeper.
+Table of Contents (Head on below to your topic of interest :D) My First Introduction to AI My First Proper Introduction to Machine Learning What Came Next? The Mistakes I&amp;rsquo;ve Made What Am I Doing Now?</description>
+    </item>
+    
+  </channel>
+</rss>

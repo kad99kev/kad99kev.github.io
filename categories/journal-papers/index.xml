@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Journal Papers on Kevlyn Kadamala</title>
+    <link>https://kad99kev.github.io/categories/journal-papers/</link>
+    <description>Recent content in Journal Papers on Kevlyn Kadamala</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 11 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://kad99kev.github.io/categories/journal-papers/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>FGTD: Face Generation from Textual Description</title>
+      <link>https://kad99kev.github.io/publications/fgtd/</link>
+      <pubDate>Tue, 11 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://kad99kev.github.io/publications/fgtd/</guid>
+      <description>Majority of current text-to-image generation tasks are limited to creating images like flowers (Oxford 102 Flower), birds (CUB-200-2011), and Common Objects (COCO) from captions. The existing face datasets such as Labeled Faces in the Wild and MegaFace lack description while datasets like CelebA have attributes associated but do not provide feature descriptions. Thus, in this paper we build upon an existing algorithm to create captions with the attributes provided in the CelebA dataset, which can not only generate one caption but it can also be extended to generate N captions per image.</description>
+    </item>
+    
+  </channel>
+</rss>

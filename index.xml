@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kevlyn Kadamala</title>
+    <link>https://kad99kev.github.io/</link>
+    <description>Recent content on Kevlyn Kadamala</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 21 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://kad99kev.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Life/Luck Abroad</title>
+      <link>https://kad99kev.github.io/klog/life-abroad/</link>
+      <pubDate>Wed, 21 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://kad99kev.github.io/klog/life-abroad/</guid>
+      <description>On the 6th of September 2022, I completed a year in Ireland. A year that feels almost a moment ago. Many memories made, and most certainly happy ones. I consider myself very lucky to be where I am. While I believe in hard work, I never underestimate the role that luck has played in my journey so far.
+The National University of Ireland, Galway (now University of Galway) was my first choice of university.</description>
+    </item>
+    
+    <item>
+      <title>FGTD: Face Generation from Textual Description</title>
+      <link>https://kad99kev.github.io/publications/fgtd/</link>
+      <pubDate>Tue, 11 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://kad99kev.github.io/publications/fgtd/</guid>
+      <description>Majority of current text-to-image generation tasks are limited to creating images like flowers (Oxford 102 Flower), birds (CUB-200-2011), and Common Objects (COCO) from captions. The existing face datasets such as Labeled Faces in the Wild and MegaFace lack description while datasets like CelebA have attributes associated but do not provide feature descriptions. Thus, in this paper we build upon an existing algorithm to create captions with the attributes provided in the CelebA dataset, which can not only generate one caption but it can also be extended to generate N captions per image.</description>
+    </item>
+    
+    <item>
+      <title>An Introduction to Algorithmic Bias</title>
+      <link>https://kad99kev.github.io/klog/algorithmic-bias/</link>
+      <pubDate>Thu, 06 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://kad99kev.github.io/klog/algorithmic-bias/</guid>
+      <description>Humans write algorithms and code that run on data collected from the real world. Together, they may mimic or exaggerate any preexisting bias. This is what we call Algorithmic Bias. We could try to avoid collecting data that segregate people based on their gender, race or religion. But, they may still materialize as correlated features. For example, purchasing records could correlate to gender and zip codes could correlate to race. Bias could also arise due to the lack of relevant data.</description>
+    </item>
+    
+    <item>
+      <title>Deep Learning on the Apple Silicon</title>
+      <link>https://kad99kev.github.io/klog/training-on-the-m1/</link>
+      <pubDate>Thu, 22 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://kad99kev.github.io/klog/training-on-the-m1/</guid>
+      <description>At the end of last year, I decided to switch my Mac 2013 for the latest Mac Mini with the Apple Silicon. This meant that initially some of the packages that supported the x86 chip could not natively run on the M1 chip. But what I was looking forward to the most was setting up TensorFlow and PyTorch onto my conda environment.
+In this article, I will be walking you through my setup procedure, train a MobileNet model and compare the results (using Weights and Biases) from my other devices.</description>
+    </item>
+    
+    <item>
+      <title>My Journey with Artificial Intelligence</title>
+      <link>https://kad99kev.github.io/klog/my-journey-with-ai/</link>
+      <pubDate>Fri, 09 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://kad99kev.github.io/klog/my-journey-with-ai/</guid>
+      <description>TL;DR - Try to make it as easy and fun as possible at the start. Once you get the hang of it, start challenging yourself. Exploring different domains is vital and once you find your niche, delve in deeper.
+Table of Contents (Head on below to your topic of interest :D) My First Introduction to AI My First Proper Introduction to Machine Learning What Came Next? The Mistakes I&amp;rsquo;ve Made What Am I Doing Now?</description>
+    </item>
+    
+    <item>
+      <title>My Experience as the Captain of the Football Team</title>
+      <link>https://kad99kev.github.io/klog/experience-as-captain/</link>
+      <pubDate>Mon, 14 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://kad99kev.github.io/klog/experience-as-captain/</guid>
+      <description>If I had to sum up my experience as the captain of my college football team into a single word, it&amp;rsquo;d be - Grateful
+It wasn&amp;rsquo;t an easy start for me. Most of it was because of the confidence (or lack thereof) in myself. I doubted my ability as a football player and as a leader. I was afraid of being a failure. It was a big responsibility and the last thing I would want to do is lose the respect of my players.</description>
+    </item>
+    
+    <item>
+      <title>Getting into Habits</title>
+      <link>https://kad99kev.github.io/klog/getting-into-habits/</link>
+      <pubDate>Wed, 05 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://kad99kev.github.io/klog/getting-into-habits/</guid>
+      <description>I started with the habit of reading. It was more of a new year&amp;rsquo;s resolution. It was difficult at first, trying to read everyday. My plan initially was to read atleast one chapter a day. I knew I wouldn&amp;rsquo;t be able to maintain this habit, but I was really really determined to complete atleast one book a month. It&amp;rsquo;s May now, and I think my determination paid off. I&amp;rsquo;ve so far read The Little Prince by Antoine de Saint-Exupéry in January, Animal Farm by George Orwell in February, Rich Dad Poor Dad by Robert Kiyosaki in March and Storm in a Teacup by Helen Czerski in April.</description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>https://kad99kev.github.io/contact/</link>
+      <pubDate>Mon, 25 Feb 2019 13:38:41 -0600</pubDate>
+      
+      <guid>https://kad99kev.github.io/contact/</guid>
+      <description>** Contact page don&amp;rsquo;t contain a body, just the front matter above. See form.html in the layouts folder.
+Formspree requires a (free) account and new form to be set up. The link is made on the final published url in the field: Restrict to Domain. It is possible to register up to 2 emails free and you can select which one you want the forms to go to within Formspree in the Settings tab.</description>
+    </item>
+    
+    <item>
+      <title>License</title>
+      <link>https://kad99kev.github.io/license/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kad99kev.github.io/license/</guid>
+      <description>My blog posts are released under a Creative Commons Attribution-ShareAlike 4.0 International License.</description>
+    </item>
+    
+  </channel>
+</rss>
