@@ -13,7 +13,7 @@ intro: |
   
   My [CV](/files/kevlynkadamala.pdf).
     
-  ### Where my interests lie?
+  ### Where my research/interests lie?
   - Optimisation
   - Multi-Agent Systems
   - Reinforcement Learning
