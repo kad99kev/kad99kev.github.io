@@ -7,9 +7,9 @@ number_categories: 3 # set to zero to exclude
 show_intro: true
 intro: |
 
-  I am a PhD Student at the University of Galway, funded by the Science Foundation Ireland - Centre for Research Training in Artificial Intelligence (SFI - CRT AI).
+  I am a PhD Student at the University of Galway, funded by the Science Foundation Ireland - Centre for Research Training in Artificial Intelligence (SFI - CRT AI), where I am supervised by [Dr Enda Barrett](https://ie.linkedin.com/in/enda-barrett-phd-8126102).
   
-  My supervisor is [Dr Enda Barrett](https://ie.linkedin.com/in/enda-barrett-phd-8126102) and my PhD topic is - "Optimizing Solar PV generation using Deep Learning".
+   I am working on optimising building control systems and problems using deep reinforcement learning.
   
   My [CV](/files/kevlynkadamala.pdf).
     
