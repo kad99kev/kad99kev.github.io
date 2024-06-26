@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Conference Papers on Kevlyn Kadamala</title>
+    <link>https://kad99kev.github.io/categories/conference-papers/</link>
+    <description>Recent content in Conference Papers on Kevlyn Kadamala</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 11 Jan 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://kad99kev.github.io/categories/conference-papers/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>An Insight into NeuroEvolution and Genetic Algorithms for Text Classification</title>
+      <link>https://kad99kev.github.io/publications/ingatc/</link>
+      <pubDate>Wed, 11 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://kad99kev.github.io/publications/ingatc/</guid>
+      <description>Natural Language Processing (NLP) systems have, over the past decade, shifted from using rule-based techniques to using machine learning-based algorithms. This has led to the development of different architectures and models for different tasks. Some of these architectures include models like the transformers, the CNN and the RNN, which have now become ubiquitous in NLP. However, designing these neural network architectures usually requires in-depth analysis and knowledge of multiple domain areas involved with the problem at hand.</description>
+    </item>
+  </channel>
+</rss>

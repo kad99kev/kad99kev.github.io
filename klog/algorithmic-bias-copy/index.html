@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=4683&amp;path=livereload" data-no-instant defer></script>
+  
+                           
+     
+
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.127.0">
+<title>An Introduction to Algorithmic Bias | Kevlyn Kadamala</title>
+
+
+
+
+
+
+
+
+  
+    
+  
+<meta name="description" content="A blog post that I wrote for my AI and Ethics module during my Master&#39;s">
+
+
+<meta property="og:site_name" content="Kevlyn Kadamala">
+<meta property="og:title" content="An Introduction to Algorithmic Bias | Kevlyn Kadamala">
+<meta property="og:description" content="A blog post that I wrote for my AI and Ethics module during my Master&#39;s" />
+<meta property="og:type" content="page" />
+<meta property="og:url" content="http://localhost:4683/klog/algorithmic-bias-copy/" />
+<meta property="og:locale" content="en">
+
+
+
+
+    
+        <meta property="og:image" content="http://localhost:4683/klog/algorithmic-bias-copy/featured.webp" >
+        <meta property="twitter:card" content="summary_large_image">
+        <meta name="twitter:image" content="http://localhost:4683/klog/algorithmic-bias-copy/featured.webp" >
+    
+    
+  
+  <meta itemprop="name" content="An Introduction to Algorithmic Bias">
+  <meta itemprop="description" content="Humans write algorithms and code that run on data collected from the real world. Together, they may mimic or exaggerate any preexisting bias. This is what we call Algorithmic Bias. We could try to avoid collecting data that segregate people based on their gender, race or religion. But, they may still materialize as correlated features. For example, purchasing records could correlate to gender and zip codes could correlate to race. Bias could also arise due to the lack of relevant data.">
+  <meta itemprop="datePublished" content="2022-01-06T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2022-01-06T00:00:00+00:00">
+  <meta itemprop="wordCount" content="1535">
+  <meta itemprop="image" content="http://localhost:4683/klog/algorithmic-bias-copy/featured.webp">
+  <meta itemprop="keywords" content="Ethics">
+  
+  
+    
+      
+    
+  
+
+
+  <!--[if IE]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+  <link rel="icon" href="/img/favicon.png" type="image/x-icon">
+  
+  
+  <link rel="stylesheet" href="/style.main.min.a8b032ca5f24551ab005285e3d04061302e89e91ededd85a2bd7e19884d1f11e.css" integrity="sha256-qLAyyl8kVRqwBShePQQGEwLonpHt7dhaK9fhmITR8R4=" media="screen">
+  
+  
+  <script src="/panelset.min.ed1ac24b6e16f4e2481e3d1d098ae66f5bc77438aef619e6e266d8ac5b00dc72.js" type="text/javascript"></script>
+  
+  
+  <script src="/main.min.d92d40ce6bb186bcbe010c32166327dea133ab0849c9d4b4287a42e023d441eb.js" type="text/javascript"></script>
+</head>
+<body>
+      <div class="grid-container">
+<header class="site-header pt4 pb2 mb4 bb b--transparent ph5 headroom z-max" role="banner">
+  <nav class="site-nav db dt-l w-100" role="navigation">
+    <a class="site-brand db dtc-l v-mid link no-underline w-100 w-33-l tc tl-l" href="http://localhost:4683/" title="Home">
+      <img src="/img/favicon.png" class="dib db-l h2 w-auto" alt="Kevlyn Kadamala">
+    </a>
+    <div class="site-links db dtc-l v-mid w-100 w-47-l tc tr-l mt3 mt0-l ttu tracked">
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/about/" title="About Me">About</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/publications/" title="Publications">Publications</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 active" href="/klog/" title="Klog">Klog</a>
+      
+      
+    </div>
+  </nav>
+</header>
+
+<main class="page-main pa4" role="main">
+  <section class="page-content mw7 center">
+    <article class="post-content pa0 ph4-l">
+      <header class="post-header">
+        <h1 class="f1 lh-solid measure-narrow mb3 fw4">An Introduction to Algorithmic Bias</h1>
+        
+        <p class="f6 measure lh-copy mv1">By Kevlyn Kadamala in <a href="http://localhost:4683/categories/ethics">Ethics</a> </p>
+        <p class="f7 db mv0 ttu">January 6, 2022</p>
+
+      
+
+      </header>
+      <section class="post-body pt5 pb4">
+        <p>Humans write algorithms and code that run on data collected from the
+real world. Together, they may mimic or exaggerate any preexisting bias.
+This is what we call Algorithmic Bias. We could try to avoid collecting
+data that segregate people based on their gender, race or religion. But,
+they may still materialize as correlated features. For example,
+purchasing records could correlate to gender and zip codes could
+correlate to race. Bias could also arise due to the lack of relevant
+data. For example, in the famous dataset - “Labeled Faces in the Wild”
+
+<a href="#1">[1]</a> 83.5% of images are of white people 
+<a href="#2">[2]</a>. It also contains a
+limited number of children, no babies, very few adults above the age of
+80, and a small proportion of women. It also states that several
+ethnicities have very little or no representation at all. The creators
+of the LFW dataset mention that the dataset is not meant for commercial
+applications. But are companies active in trying to identify any
+pre-existing biases in their datasets? Are they aware of how their
+algorithms interact with society? Algorithmic systems shape our lives,
+influencing our opportunities in employment, education and finance. The
+data that we unknowingly provide them with often fuel these systems.
+This has been the source of the flame that has destroyed so many
+innocent lives.</p>
+<p>In 2016, ProPublica published its analysis of COMPAS (Correctional
+Offender Management Profiling for Alternative Sanctions). This was an
+algorithm that not only assesses the risk of committing a crime in the
+future but also around two dozen so-called “criminogenic needs”. It
+ranks the defendants either as low, medium or high risk in each category
+
+<a href="#3">[3]</a>. The algorithm predicted that blacks are twice as likely as whites
+to be labelled a higher risk and not re-offend. But it would make the
+opposite mistake among whites. They were more likely labelled to be
+lower risk but go on and commit more crimes.</p>
+<figure>
+<img src="images/black-defendant.png" id="fig:black" alt="Black Defendants’ Risk Scores" /><figcaption style="text-align: center" aria-hidden="true">Black Defendants’ Risk Scores</figcaption>
+</figure>
+<figure>
+<img src="images/white-defendant.png" id="fig:white" alt="White Defendants’ Risk Scores" /><figcaption style="text-align: center" aria-hidden="true">White Defendants’ Risk Scores</figcaption>
+</figure>
+<p>In 2018, researchers conducted a study with Convolution Neural Networks
+(CNN). It detected potentially cancerous skin lesions better than the
+study group that included 58 dermatologists. Yet, the data used to train
+the CNN came from fair-skinned populations in the US, Australia and
+Europe. As a result, people of colour could either be misdiagnosed with
+nonexistent skin cancers or they could be completely missed 
+<a href="#4">[4]</a>. In
+2019, Facebook was sued for letting advertisers target their ads based
+on race, gender and religion. It included postings for preschool
+teachers and secretaries which they showed to a higher fraction of
+women. And, they showed postings for janitors and taxi drivers to a
+higher proportion of minorities. White users were shown more ads on home
+sales, while minorities were shown ads for rentals 
+<a href="#5">[5]</a>. The way these
+systems are established, create a positive feedback loop. Every
+incorrect prediction, every false sentencing and every targeted
+advertisement adds another data point to the already biased system.</p>
+<figure>
+<img src="images/bmj.jpg" id="fig:white" alt="White Defendants’ Risk Scores" /><figcaption style="text-align: center" aria-hidden="true">The cascading effect of AI.
+<br />
+Image source: The British Medical Journal <a href="#6">[6]</a></figcaption>
+</figure>
+<p>The first step that we as developers can take is understanding our
+responsibility. A study was conducted in 2019 where one on one
+interviews were conducted with around 35 ML practitioners. Most of the
+interviewees reported that their teams do not have any protocols in
+place to support the collection and curation of a balanced or
+representative dataset. Often these teams do not discover serious
+fairness issues until they receive customer feedback 
+<a href="#7">[7]</a>. A biased
+society often leads to a biased AI, and programmers are merely a part of
+society. This same AI that we use so often, is developed by human
+programmers. Hence, we must recognize our own biases to avoid
+incorporating them into the AI systems that we develop. So, how can we
+combat algorithmic bias? There has been a lot of discussion around the
+power of open source and its communities. We could find great potential
+in its technologies and methodologies in the fight against algorithmic
+bias. We have AI research labs from companies like Google (Google Brain)
+and Facebook (Facebook AI Research) working on open-sourced Deep
+Learning libraries like Tensorflow and PyTorch respectively. These
+libraries along with Scikit-learn, SciPy, spaCy etc. already dominate
+modern AI. Open source is not only effective in software, but also for
+curating large datasets. We have platforms like Kaggle and CodaLab where
+individuals, organisations or companies publish their datasets to obtain
+a community-sourced solution. This also enables and encourages discourse
+on any existing bias. Openness will lead to awareness. It would only
+educate those unaware of algorithmic bias and help them understand its
+implications.</p>
+<figure>
+<img src="images/datasets.png" id="fig:white" alt="White Defendants’ Risk Scores" /><figcaption style="text-align: center" aria-hidden="true">Some publicly available dataset sources.
+<br />
+Image source: Great Learning <a href="#8">[8]</a></figcaption>
+</figure>
+<p>We have to recognize that issues regarding algorithmic fairness usually
+cannot be foreseen or detected before launch 
+<a href="#9">[9]</a>. It often includes
+hindsight, and though wonderful, we need to identify any existing biases
+before causing any catastrophic damage. There might not be one solution
+that solves all problems. But the important point to keep in mind is
+that we will have problems to solve. There have been communities
+established for fairness, accountability and transparency (FAT ML
+
+<a href="#10">[10]</a>). Tools are being developed to help us understand our data better
+(Know Your Data 
+<a href="#11">[11]</a>). Important metrics are being included to
+evaluate fairness and mitigate any bias in trained models (AllenNLP
+
+<a href="#12">[12]</a>, 
+<a href="#13">[13]</a> and Fairlearn 
+<a href="#14">[14]</a>). These steps are necessary to
+ensure that we incorporate equity into our AI systems to prevent it from
+amplifying inequalities.</p>
+<p>While we all strive for equality, equity, fairness, justice, sometimes,
+it is not enough. Sometimes we need to be biased to ensure a level
+playing field for everyone. For example, the selective public schools of
+New York. A New York Times article released an article titled, “Only 7
+Black Students Got Into Stuyvesant, N.Y.’s Most Selective High School,
+Out of 895 Spots,”. Eight of the nine specialized high schools require
+applicants to undergo the Specialized High Schools Admissions Test
+(SHSAT). The main problem is not that Black and Hispanic students
+neglect to give the SHSAT, even though they comprise the majority of
+students taking the test, they are disproportionately denied admission
+into these specialized schools. Another fact of the matter is that
+despite applying to these schools and taking entrance exams, children of
+colour do not attend middle schools that funnel students into
+specialized schools 
+<a href="#15">[15]</a>. Here is another article that explains how
+racism affects children of colour in public schools 
+<a href="#16">[16]</a>.</p>
+<p>Many questions arise from this unfortunate situation. Could we find
+another way to fight this bias by working on an “anti-bias algorithm”?
+Could an algorithm be trained on biased data, where it manages to
+identify and disregard the bias? While these are hypotheticals, one
+thing is certain is that if we have to integrate AI into society, we
+have to keep algorithmic fairness in mind. But while algorithms and data
+is one thing, addressing social and political themes are another problem
+that we as a society have to solve.</p>
+
+
+
+
+<h2 id="references">References
+  <a href="#references"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<p><a name="1"></a>[1] G. B. Huang, M. Ramesh, T. Berg, and E. Learned-Miller, “Labeled Faces in the Wild: A Database for Studying Face Recognition in Unconstrained Environments,” Tech. Rep. 07-49, University of Massachusetts, Amherst, October 2007.</p>
+<p><a name="2"></a>[2] “Why Racial Bias is Prevalent in Facial Recognition Technology.” <a target="_blank" href="http://jolt.law.harvard.edu/digest/why-racial-bias-is-prevalent-in-facial-recognition-technology">
+<a href="http://jolt.law.harvard.edu/digest/why-racial-bias-is-prevalent-in-facial-recognition-technology" target="_blank" rel="noopener">http://jolt.law.harvard.edu/digest/why-racial-bias-is-prevalent-in-facial-recognition-technology</a></a>. Accessed: 20th December 2021.</p>
+<p><a name="3"></a>[3] “Machine Bias.” <a target="_blank" href="https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing">
+<a href="https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing" target="_blank" rel="noopener">https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing</a></a>. Accessed: 20th December 2021.</p>
+<p><a name="4"></a>[4] A. Lashbrook, “AI-Driven Dermatology Could Leave Dark-Skinned Patients Be-
+hind.” <a target="_blank" href="https://www.theatlantic.com/health/archive/2018/08/machine-learning-dermatology-skin-color/567619/">
+<a href="https://www.theatlantic.com/health/archive/2018/08/machine-learning-dermatology-skin-color/567619/" target="_blank" rel="noopener">https://www.theatlantic.com/health/archive/2018/08/machine-learning-dermatology-skin-color/567619/</a></a>, Aug 2018. Accessed: 20th December 2021.</p>
+<p><a name="5"></a>[5] “Facebook’s ad-serving algorithm discriminates by gender and race.” <a target="_blank" href="https://www.technologyreview.com/2019/04/05/1175/facebook-algorithm-discriminates-ai-bias/">
+<a href="https://www.technologyreview.com/2019/04/05/1175/facebook-algorithm-discriminates-ai-bias/" target="_blank" rel="noopener">https://www.technologyreview.com/2019/04/05/1175/facebook-algorithm-discriminates-ai-bias/</a></a>. Accessed: 20th December 2021.</p>
+<p><a name="6"></a>[6] D. Leslie, A. Mazumder, A. Peppin, M. K. Wolters, and A. Hagerty, “Does “AI” stand for augmenting inequality in the era of covid-19 healthcare?,” BMJ, vol. 372, p. n304, March 2021.</p>
+<p><a name="7"></a>[7] K. Holstein, J. Wortman Vaughan, H. Daumé, M. Dudik, and H. Wallach, “Improving Fairness in Machine Learning Systems: What Do Industry Practitioners Need?,” in Proceedings of the 2019 CHI Conference on Human Factors in Computing Systems, p. 1–16, ACM, May 2019.</p>
+<p><a name="8"></a>[8] “Great Learning.” <a target="_blank" href="https://www.mygreatlearning.com/blog/sources-for-analytics-and-machine-learning-datasets/">
+<a href="https://www.mygreatlearning.com/blog/sources-for-analytics-and-machine-learning-datasets/" target="_blank" rel="noopener">https://www.mygreatlearning.com/blog/sources-for-analytics-and-machine-learning-datasets/</a></a>. Accessed: 5th January 2022.</p>
+<p><a name="9"></a>[9] A. Woodruff, “10 things you should know about algorithmic fairness,” Interactions, vol. 26, p. 47–51, Jun 2019.</p>
+<p><a name="10"></a>[10] “Fairness, Accountability, and Transparency in Machine Learning.” <a target="_blank" href="https://www.fatml.org/">
+<a href="https://www.fatml.org/" target="_blank" rel="noopener">https://www.fatml.org/</a></a>. Accessed: 4th January 2022.</p>
+<p><a name="11"></a>[11] T. P. t. Google, “Know Your Data.” <a target="_blank" href="https://knowyourdata.withgoogle.com">
+<a href="https://knowyourdata.withgoogle.com" target="_blank" rel="noopener">https://knowyourdata.withgoogle.com</a></a>. Accessed: 4th January 2022.</p>
+<p><a name="12"></a>[12] “Fairness and Bias Mitigation · A Guide to Natural Language Processing With AllenNLP.” <a target="_blank" href="https://guide.allennlp.org/fairness/">
+<a href="https://guide.allennlp.org/fairness/" target="_blank" rel="noopener">https://guide.allennlp.org/fairness/</a></a>. Accessed: 4th January 2022.</p>
+<p><a name="13"></a>[13] “Fairness Metrics Allen NLP Documentation.” <a target="_blank" href="https://docs.allennlp.org/main/api/fairness/fairness_metrics/">
+<a href="https://docs.allennlp.org/main/api/fairness/fairness_metrics/" target="_blank" rel="noopener">https://docs.allennlp.org/main/api/fairness/fairness_metrics/</a></a>. Accessed: 4th January 2022.</p>
+<p><a name="14"></a>[14] “Fairlearn.” <a target="_blank" href="https://fairlearn.org/">
+<a href="https://fairlearn.org/" target="_blank" rel="noopener">https://fairlearn.org/</a></a>. Accessed: 4th January 2022.</p>
+<p><a name="15"></a>[15] “Why New York City’s Selective Public High Schools Are Neglecting to Reflect the City’s Actual Diversity.” <a target="_blank" href="https://raceandschools.barnard.edu/selectivehighschools/rita-2/">
+<a href="https://raceandschools.barnard.edu/selectivehighschools/rita-2/" target="_blank" rel="noopener">https://raceandschools.barnard.edu/selectivehighschools/rita-2/</a></a>. Accessed: 4th January 2022.</p>
+<p><a name="16"></a>[16] “How Racism Affects Children of Color in Public Schools.” <a target="_blank" href="https://www.thoughtco.com/how-racism-affects-public-school-minorities-4025361">
+<a href="https://www.thoughtco.com/how-racism-affects-public-school-minorities-4025361" target="_blank" rel="noopener">https://www.thoughtco.com/how-racism-affects-public-school-minorities-4025361</a></a>. Accessed: 4th January 2022.</p>
+<p><a name="17"></a>[17] V. Warmerdam, “koaning.io: Naive Bias<a name="2"></a>[tm] and Fairness Tooling.” <a target="_blank" href="https://koaning.io/posts/just-another-dangerous-situation/">
+<a href="https://koaning.io/posts/just-another-dangerous-situation/" target="_blank" rel="noopener">https://koaning.io/posts/just-another-dangerous-situation/</a></a>, 2021.</p>
+<p><a name="18"></a>[18] CrashCourse, “Algorithmic Bias and Fairness: Crash Course AI #18.” <a target="_blank" href="https://www.youtube.com/watch?v=gV0_raKR2UQ">
+<a href="https://www.youtube.com/watch?v=gV0_raKR2UQ" target="_blank" rel="noopener">https://www.youtube.com/watch?v=gV0_raKR2UQ</a></a>, 2019. Accessed: 20th December 2021.</p>
+<p><a name="19"></a>[19] V. Eubanks, “The Digital Poorhouse: Embracing habit in an automated world,” Harper’s Magazine, vol. January 2018, Jan 2018. Accessed: 20th December 2021.</p>
+<p><a name="20"></a>[20] J. Sherman, “AI and machine learning bias has dangerous implications.” <a target="_blank" href="https://opensource.com/article/18/1/how-open-source-can-fight-algorithmic-bias">
+<a href="https://opensource.com/article/18/1/how-open-source-can-fight-algorithmic-bias" target="_blank" rel="noopener">https://opensource.com/article/18/1/how-open-source-can-fight-algorithmic-bias</a></a>. Accessed: 20th December 2021.</p>
+<p><a name="21"></a>[21] “Bias in machine learning: How to measure fairness in algorithms?” <a target="_blank" href="https://www.trilateralresearch.com/bias-in-machine-learning-how-to-measure-fairness-in-algorithms/">
+<a href="https://www.trilateralresearch.com/bias-in-machine-learning-how-to-measure-fairness-in-algorithms/" target="_blank" rel="noopener">https://www.trilateralresearch.com/bias-in-machine-learning-how-to-measure-fairness-in-algorithms/</a></a>. Accessed: 4th January 2022.</p>
+<div style="text-align: center; margin-top: 2rem">
+Photo by <a href="https://unsplash.com/@markusspiske?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Markus Spiske</a> on <a href="https://unsplash.com/s/photos/algorithm?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+</div>
+        
+        <details closed class="f6 fw7 input-reset">
+  <dl class="f6 lh-copy">
+    <dt class="fw7">Posted on:</dt>
+    <dd class="fw5 ml0">January 6, 2022</dd>
+  </dl>
+  <dl class="f6 lh-copy">
+    <dt class="fw7">Length:</dt>
+    <dd class="fw5 ml0">8 minute read, 1535 words</dd>
+  </dl>
+  
+  <dl class="f6 lh-copy">
+    <dt class="fw7">Categories:</dt>
+    <dd class="fw5 ml0"> <a href="http://localhost:4683/categories/ethics">Ethics</a> </dd>
+  </dl>
+  
+  
+  
+  <dl class="f6 lh-copy">
+    <dt class="fw7">See Also:</dt>
+    
+  </dl>
+</details>
+
+      </section>
+      <footer class="post-footer">
+        <div class="post-pagination dt w-100 mt4 mb2">
+  
+  
+    <a class="prev dtc pr2 tl v-top fw6"
+    href="http://localhost:4683/klog/life-abroad/">&larr; Life/Luck Abroad</a>
+  
+  
+  
+    <a class="next dtc pl2 tr v-top fw6"
+    href="http://localhost:4683/klog/algorithmic-bias/">An Introduction to Algorithmic Bias &rarr;</a>
+  
+</div>
+
+      </footer>
+    </article>
+    
+      <div class="post-comments pa0 pa4-l mt4">
+  
+</div>
+
+    
+  </section>
+</main>
+<footer class="site-footer pv4 bt b--transparent ph5" role="contentinfo">
+  <nav class="db dt-l w-100">
+    <p class="site-copyright f7 db dtc-l v-mid w-100 w-33-l tc tl-l pv2 pv0-l mv0 lh-copy">
+      &copy; 2024 Kevlyn Kadamala, Galway
+      <span class="middot-divider"></span>
+      Made with <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/hugo-apero/" rel="dct:source">Hugo Apéro</a></span>.
+      <br />
+      
+Based on <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/formspree/blogophonic-hugo" rel="dct:source">Blogophonic</a></span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://formspree.io" property="cc:attributionName" rel="cc:attributionURL">Formspree</a>.
+    </p>
+    
+    <div class="site-social-links db dtc-l v-mid w-100 w-33-l tc pv2 pv0-l mv0">
+      <div class="social-icon-links" aria-hidden="true">
+  
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://github.com/kad99kev" title="github" target="_blank" rel="me noopener">
+      <i class="fab fa-github fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="http://orcid.org/0000-0002-9478-5675" title="orcid" target="_blank" rel="me noopener">
+      <i class="fab fa-orcid fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="/blog/index.xml" title="rss" >
+      <i class="fas fa-rss fa-lg fa-fw"></i>
+    </a>
+  
+</div>
+
+    </div>
+    
+    <div class="site-links f6 db dtc-l v-mid w-100 w-67-l tc tr-l pv2 pv0-l mv0">
+      
+      <a class="dib pv1 ph2 link" href="/license/" title="License">License</a>
+      
+      <a class="dib pv1 ph2 link" href="/contact/" title="Contact form">Contact</a>
+      
+    </div>
+  </nav>
+  
+    <script>
+
+    var i, text, code, codes = document.getElementsByTagName('code');
+    for (let i = 0; i < codes.length;) {
+      code = codes[i];
+      if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+        text = code.textContent;
+        if (/^\$[^$]/.test(text) && /[^$]\$$/.test(text)) {
+          text = text.replace(/^\$/, '\\(').replace(/\$$/, '\\)');
+          code.textContent = text;
+        }
+        if (/^\\\((.|\s)+\\\)$/.test(text) ||
+            /^\\\[(.|\s)+\\\]$/.test(text) ||
+            /^\$(.|\s)+\$$/.test(text) ||
+            /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+          code.outerHTML = code.innerHTML;  
+          continue;
+        }
+      }
+      i++;
+    }
+</script>
+
+  
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css" integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js" integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+
+
+    
+  
+  
+</footer>
+
+      </div>
+    </body>
+</html>

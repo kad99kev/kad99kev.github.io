@@ -4,44 +4,44 @@
     <title>Categories on Kevlyn Kadamala</title>
     <link>https://kad99kev.github.io/categories/</link>
     <description>Recent content in Categories on Kevlyn Kadamala</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 21 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://kad99kev.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 26 Jun 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://kad99kev.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Life</title>
       <link>https://kad99kev.github.io/categories/life/</link>
-      <pubDate>Wed, 21 Sep 2022 00:00:00 +0000</pubDate>
-      
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://kad99kev.github.io/categories/life/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Journal Papers</title>
       <link>https://kad99kev.github.io/categories/journal-papers/</link>
-      <pubDate>Tue, 11 Jan 2022 00:00:00 +0000</pubDate>
-      
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://kad99kev.github.io/categories/journal-papers/</guid>
       <description></description>
     </item>
-    
+    <item>
+      <title>Conference Papers</title>
+      <link>https://kad99kev.github.io/categories/conference-papers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://kad99kev.github.io/categories/conference-papers/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Ethics</title>
       <link>https://kad99kev.github.io/categories/ethics/</link>
-      <pubDate>Thu, 06 Jan 2022 00:00:00 +0000</pubDate>
-      
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://kad99kev.github.io/categories/ethics/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>AI</title>
       <link>https://kad99kev.github.io/categories/ai/</link>
-      <pubDate>Thu, 22 Jul 2021 00:00:00 +0000</pubDate>
-      
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://kad99kev.github.io/categories/ai/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

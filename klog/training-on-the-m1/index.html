@@ -8,12 +8,9 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.102.0" />
+<meta name="generator" content="Hugo 0.127.0">
 <title>Deep Learning on the Apple Silicon | Kevlyn Kadamala</title>
 
-
-<meta property="twitter:site" content="@kad99kev">
-<meta property="twitter:creator" content="@kad99kev">
 
 
 
@@ -43,51 +40,35 @@
         <meta name="twitter:image" content="https://kad99kev.github.io/klog/training-on-the-m1/featured.webp" >
     
     
+  
   <meta itemprop="name" content="Deep Learning on the Apple Silicon">
-<meta itemprop="description" content="At the end of last year, I decided to switch my Mac 2013 for the latest Mac Mini with the Apple Silicon. This meant that initially some of the packages that supported the x86 chip could not natively run on the M1 chip. But what I was looking forward to the most was setting up TensorFlow and PyTorch onto my conda environment.
-In this article, I will be walking you through my setup procedure, train a MobileNet model and compare the results (using Weights and Biases) from my other devices."><meta itemprop="datePublished" content="2021-07-22T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2021-07-22T00:00:00+00:00" />
-<meta itemprop="wordCount" content="897"><meta itemprop="image" content="https://kad99kev.github.io/klog/training-on-the-m1/featured.webp">
-<meta itemprop="keywords" content="" />
+  <meta itemprop="description" content="At the end of last year, I decided to switch my Mac 2013 for the latest Mac Mini with the Apple Silicon. This meant that initially some of the packages that supported the x86 chip could not natively run on the M1 chip. But what I was looking forward to the most was setting up TensorFlow and PyTorch onto my conda environment.
+In this article, I will be walking you through my setup procedure, train a MobileNet model and compare the results (using Weights and Biases) from my other devices.">
+  <meta itemprop="datePublished" content="2021-07-22T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2021-07-22T00:00:00+00:00">
+  <meta itemprop="wordCount" content="897">
+  <meta itemprop="image" content="https://kad99kev.github.io/klog/training-on-the-m1/featured.webp">
+  <meta itemprop="keywords" content="AI">
   
-<script type="application/javascript">
-var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
-var doNotTrack = (dnt == "1" || dnt == "yes");
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-173936491-1', 'auto');
-	ga('set', 'anonymizeIp', true);
-	ga('send', 'pageview');
-}
-</script>
   
-<script type="application/javascript">
-var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
-var doNotTrack = (dnt == "1" || dnt == "yes");
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-173936491-1', 'auto');
-	ga('set', 'anonymizeIp', true);
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+    
+      
+    
+  
+
 
   <!--[if IE]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
   <link rel="icon" href="/img/favicon.png" type="image/x-icon">
   
   
-  <link rel="stylesheet" href="/style.main.min.508aa34bb4fa7ebfddd6892a4ec251e1ce46ad0e0c5be6380abc84336f01b14e.css" integrity="sha256-UIqjS7T6fr/d1okqTsJR4c5GrQ4MW&#43;Y4CryEM28BsU4=" media="screen">
+  <link rel="stylesheet" href="/style.main.min.a8b032ca5f24551ab005285e3d04061302e89e91ededd85a2bd7e19884d1f11e.css" integrity="sha256-qLAyyl8kVRqwBShePQQGEwLonpHt7dhaK9fhmITR8R4=" media="screen">
   
   
   <script src="/panelset.min.ed1ac24b6e16f4e2481e3d1d098ae66f5bc77438aef619e6e266d8ac5b00dc72.js" type="text/javascript"></script>
   
   
-  <script src="/main.min.ef3e492ee2d92febc64d07d55e6bb4412113742367bb77151aa48687356560e5.js" type="text/javascript"></script>
+  <script src="/main.min.d92d40ce6bb186bcbe010c32166327dea133ab0849c9d4b4287a42e023d441eb.js" type="text/javascript"></script>
 </head>
 <body>
       <div class="grid-container">
@@ -340,18 +321,7 @@ if (!doNotTrack) {
       </footer>
     </article>
     
-      
-<div class="post-comments pa0 pa4-l mt4">
-  
-  <script src="https://utteranc.es/client.js"
-          repo="kad99kev/kad99kev.github.io"
-          issue-term="pathname"
-          theme="boxy-light"
-          label="comments :crystal_ball:"
-          crossorigin="anonymous"
-          async
-          type="text/javascript">
-  </script>
+      <div class="post-comments pa0 pa4-l mt4">
   
 </div>
 
@@ -361,7 +331,7 @@ if (!doNotTrack) {
 <footer class="site-footer pv4 bt b--transparent ph5" role="contentinfo">
   <nav class="db dt-l w-100">
     <p class="site-copyright f7 db dtc-l v-mid w-100 w-33-l tc tl-l pv2 pv0-l mv0 lh-copy">
-      &copy; 2023 Kevlyn Kadamala, Galway
+      &copy; 2024 Kevlyn Kadamala, Galway
       <span class="middot-divider"></span>
       Made with <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/hugo-apero/" rel="dct:source">Hugo Apéro</a></span>.
       <br />
@@ -384,7 +354,7 @@ Based on <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><a xml
     
       
     
-    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://github.com/kad99kev" title="github" target="_blank" rel="noopener">
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://github.com/kad99kev" title="github" target="_blank" rel="me noopener">
       <i class="fab fa-github fa-lg fa-fw"></i>
     </a>
   
@@ -399,21 +369,8 @@ Based on <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><a xml
     
       
     
-    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://twitter.com/kad99kev" title="twitter" target="_blank" rel="noopener">
-      <i class="fab fa-twitter fa-lg fa-fw"></i>
-    </a>
-  
-    
-    
-    
-    
-    
-    
-    
-      
-    
-    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="http://orcid.org/0000-0002-9478-5675" title="orcid" target="_blank" rel="noopener">
-      <i class="ai ai-orcid fa-lg fa-fw"></i>
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="http://orcid.org/0000-0002-9478-5675" title="orcid" target="_blank" rel="me noopener">
+      <i class="fab fa-orcid fa-lg fa-fw"></i>
     </a>
   
     

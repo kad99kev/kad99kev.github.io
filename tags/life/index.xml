@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Life on Kevlyn Kadamala</title>
+    <link>http://localhost:4683/tags/life/</link>
+    <description>Recent content in Life on Kevlyn Kadamala</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 21 Sep 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:4683/tags/life/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Life/Luck Abroad</title>
+      <link>http://localhost:4683/klog/life-abroad/</link>
+      <pubDate>Wed, 21 Sep 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4683/klog/life-abroad/</guid>
+      <description>On the 6th of September 2022, I completed a year in Ireland. A year that feels almost a moment ago. Many memories made, and most certainly happy ones. I consider myself very lucky to be where I am. While I believe in hard work, I never underestimate the role that luck has played in my journey so far.&#xA;The National University of Ireland, Galway (now University of Galway) was my first choice of university.</description>
+    </item>
+  </channel>
+</rss>

@@ -4,17 +4,23 @@
     <title>Journal Papers on Kevlyn Kadamala</title>
     <link>https://kad99kev.github.io/categories/journal-papers/</link>
     <description>Recent content in Journal Papers on Kevlyn Kadamala</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 11 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://kad99kev.github.io/categories/journal-papers/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 26 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://kad99kev.github.io/categories/journal-papers/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Enhancing HVAC Control Systems through Transfer Learning with Deep Reinforcement Learning Agents</title>
+      <link>https://kad99kev.github.io/publications/ehcstldrl/</link>
+      <pubDate>Fri, 26 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://kad99kev.github.io/publications/ehcstldrl/</guid>
+      <description>Natural Language Processing (NLP) systems have, over the past decade, shifted from using rule-based techniques to using machine learning-based algorithms. This has led to the development of different architectures and models for different tasks. Some of these architectures include models like the transformers, the CNN and the RNN, which have now become ubiquitous in NLP. However, designing these neural network architectures usually requires in-depth analysis and knowledge of multiple domain areas involved with the problem at hand.</description>
+    </item>
     <item>
       <title>FGTD: Face Generation from Textual Description</title>
       <link>https://kad99kev.github.io/publications/fgtd/</link>
       <pubDate>Tue, 11 Jan 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://kad99kev.github.io/publications/fgtd/</guid>
       <description>Majority of current text-to-image generation tasks are limited to creating images like flowers (Oxford 102 Flower), birds (CUB-200-2011), and Common Objects (COCO) from captions. The existing face datasets such as Labeled Faces in the Wild and MegaFace lack description while datasets like CelebA have attributes associated but do not provide feature descriptions. Thus, in this paper we build upon an existing algorithm to create captions with the attributes provided in the CelebA dataset, which can not only generate one caption but it can also be extended to generate N captions per image.</description>
     </item>
-    
   </channel>
 </rss>

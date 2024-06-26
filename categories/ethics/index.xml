@@ -4,17 +4,16 @@
     <title>Ethics on Kevlyn Kadamala</title>
     <link>https://kad99kev.github.io/categories/ethics/</link>
     <description>Recent content in Ethics on Kevlyn Kadamala</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 06 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://kad99kev.github.io/categories/ethics/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 06 Jan 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://kad99kev.github.io/categories/ethics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>An Introduction to Algorithmic Bias</title>
       <link>https://kad99kev.github.io/klog/algorithmic-bias/</link>
       <pubDate>Thu, 06 Jan 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://kad99kev.github.io/klog/algorithmic-bias/</guid>
       <description>Humans write algorithms and code that run on data collected from the real world. Together, they may mimic or exaggerate any preexisting bias. This is what we call Algorithmic Bias. We could try to avoid collecting data that segregate people based on their gender, race or religion. But, they may still materialize as correlated features. For example, purchasing records could correlate to gender and zip codes could correlate to race. Bias could also arise due to the lack of relevant data.</description>
     </item>
-    
   </channel>
 </rss>
