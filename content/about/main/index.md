@@ -15,12 +15,12 @@ intro: |
     
   ### Where my research/interests lie?
   - Optimisation
-  - Multi-Agent Systems
   - Reinforcement Learning
+  - Agent and Multi-Agent Systems
   
   ### What I like to do?
   - Play football
-  - Go for a jog
+  - Go for a run
   - Read books
   - Listen to music
   
@@ -28,6 +28,8 @@ intro: |
   - My favourite football club is [Arsenal](https://www.arsenal.com/)
   - I can play as a Full Back, Centre Back or as a Centre Defensive Midfielder
   - My favourite genres of music are Alternative and Indie
+
+  <h6>Thank you to Michael McGloin for that very accurate drawing of me!</h6>
 ---
 
 ** index doesn't contain a body, just front matter above.

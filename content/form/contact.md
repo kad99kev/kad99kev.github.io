@@ -8,7 +8,7 @@ description: |
  
  **Details:**
  
- k.kadamala1@nuigalway.ie
+ k.kadamala1@universityofgalway.ie
  
  School of Computer Science
  

@@ -2,7 +2,7 @@
 title: "FGTD: Face Generation from Textual Description"
 excerpt: "K. Deorukhkar, K. Kadamala, and E. Menezes, ‘FGTD: Face Generation from Textual Description’, in Inventive Communication and Computational Technologies, vol. 311, G. Ranganathan, X. Fernando, and F. Shi, Eds. Singapore: Springer Nature Singapore, 2022, pp. 547–562. doi: 10.1007/978-981-16-5529-6_43"
 date: 2022-01-11
-author: "Kalpana Deorukhkar, Kevlyn Kadamala, Elita Menezes"
+author: "Kalpana Deorukhkar, Kevlyn Kadamala and Elita Menezes"
 draft: false
 layout: single
 categories:
