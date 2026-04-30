@@ -1,0 +1,12 @@
+---
+title: "Transfer Learning with TD3 for Adaptive HVAC Control in Diverse Building Environments"
+excerpt: 'This paper demonstrates that applying the TD3 algorithm with transfer learning to heterogeneous HVAC control scenarios can perform competitively against rule-based and scratch-trained agents, showcasing its potential for adaptive, cross-building HVAC optimisation.'
+collection: publications
+category: workshop
+permalink: /publication/tl-td3
+date: 2025-01-03
+venue: 'Highlights in Practical Applications of Agents, Multi-Agent Systems, and Digital Twins: The PAAMS Collection'
+paperurl: 'https://link.springer.com/chapter/10.1007/978-3-031-73058-0_21'
+citation: 'Kadamala, K., Chambers, D., & Barrett, E. (2024, June). Transfer Learning with TD3 for Adaptive HVAC Control in Diverse Building Environments. In International Conference on Practical Applications of Agents and Multi-Agent Systems (pp. 256-267). Cham: Springer Nature Switzerland.'
+---
+This paper studies the application of the Twin Delayed Deep Deterministic Policy Gradient (TD3) algorithm on two heterogeneous transfer scenarios. Transfer learning has shown to be effective in addressing challenges faced in RL for HVAC control by leveraging knowledge acquired during the development of an agent for one building to tackle a problem related to another building. However, buildings exhibit significant variability in size, construction materials, and geographical location; thus, simply transferring neural networks would be a challenge because of the need to adapt to diverse building characteristics. In this research, we extend prior work and investigate the efficacy of transfer learning with the TD3 algorithm. We use this algorithm to optimise HVAC control systems across different building environments. Our experimental results demonstrate the competitive performance of our transfer learning methods compared to rule-based control and training from scratch. Our transfer learning methods see up to 2-3% improvement in performance when compared to these agents. Overall, this study highlights the potential of transfer learning with the TD3 algorithm to enhance adaptive HVAC control systems in diverse building environments.
