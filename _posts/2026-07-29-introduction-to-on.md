@@ -2,7 +2,7 @@
 title: 'My boring PhD'
 excerpt: 'and my happy PhD'
 date: 2026-07-29
-permalink: /posts/2026/06/intro-to-on/
+permalink: /posts/2026/06/my-boring-phd/
 tags:
   - life
 ---
