@@ -26,11 +26,11 @@ author:
   avatar           : "profile.png"
   name             : "Kevlyn Kadamala"
   pronouns         : # example: "she/her"  
-  bio              : "PhD Student @ University of Galway"
+  bio              : "Postdoctoral Researcher @ University College Dublin"
   location         : "Dublin, Ireland"
-  employer         : "University of Galway"
+  employer         : "University College Dublin"
   uri              : # URL
-  email            : "kadamala.kevlyn@gmail.com" 
+  email            : "kevlyn.kadamala@ucd.ie" 
 
   # Academic websites
   academia         : # URL

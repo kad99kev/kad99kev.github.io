@@ -9,10 +9,10 @@ redirect_from:
 
 Hello, I’m Kevlyn Kadamala.
 
-I am a fourth-year PhD Student at the University of Galway, funded by the Research Ireland - Centre for Research Training in Artificial Intelligence (CRT AI), where I am supervised by Dr Enda Barrett.
+I am a postdoctoral researcher at University College Dublin and a researcher at [QUAIL](https://ucd-quail.github.io/). My current research focuses on developing practical quantum computing solutions for optimisation and machine learning problems.
 
-I am working on optimising building HVAC control systems and problems using deep reinforcement learning.
+I completed my PhD at the University of Galway, where I explored how prior data and pre-trained weights can improve the performance and efficiency of reinforcement learning-based algorithms for HVAC control; accounting for variations in building characteristics such as location, size, structure, materials, and weather conditions through methods like fine-tuning, padding, and representation learning.
 
-I have keen interests in reinforcement learning, and evolutionary computation. But I have also worked in other domains of AI like - machine learning, deep learning, natural language processing, and optimisation.
+I have keen interests in reinforcement learning, and evolutionary computation. But I have also worked in other domains of AI like – machine learning, deep learning, natural language processing, and optimisation.
 
 Apart from work, I like playing football, running (any sort of physical activity, really), reading, and discovering new music. Since 2006 I've spent most of my time worrying about Arsenal.
