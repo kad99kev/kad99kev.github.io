@@ -9,7 +9,7 @@ redirect_from:
 
 Hello, I’m Kevlyn Kadamala.
 
-I am a postdoctoral researcher at University College Dublin and a researcher at [QUAIL](https://ucd-quail.github.io/). My current research focuses on developing practical quantum computing solutions for optimisation and machine learning problems.
+I am a postdoctoral researcher at University College Dublin and a researcher at [QUAIL](https://quail.ucd-cs.ie/). My current research focuses on developing practical quantum computing solutions for optimisation and machine learning problems.
 
 I completed my PhD at the University of Galway, where I explored how prior data and pre-trained weights can improve the performance and efficiency of reinforcement learning-based algorithms for HVAC control; accounting for variations in building characteristics such as location, size, structure, materials, and weather conditions through methods like fine-tuning, padding, and representation learning.
 
